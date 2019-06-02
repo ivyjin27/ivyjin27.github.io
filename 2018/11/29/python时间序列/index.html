@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="时间序列,statistics," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="曾经一个项目里面有用到时间序列，但是当时由于赶进度，主要精力放在了模型实现上。但是“知其然而不知其所以然”的知识点，对我来说是最容易遗忘的，所以在周末学习一下概念部分~  时间序列算法常见时序模型   模型名称 描述     平滑法 常用于趋势分析和预测，根据平滑技术可区分为移动平均法和指数平滑法   趋势拟合法 把时间作为自变量，相应的序列观察值作为因变量，简历回归模型。可分为线性拟合和曲线拟">
+<meta name="keywords" content="时间序列,statistics">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python时间序列">
+<meta property="og:url" content="http://yoursite.com/2018/11/29/python时间序列/index.html">
+<meta property="og:site_name" content="数据分析笔记">
+<meta property="og:description" content="曾经一个项目里面有用到时间序列，但是当时由于赶进度，主要精力放在了模型实现上。但是“知其然而不知其所以然”的知识点，对我来说是最容易遗忘的，所以在周末学习一下概念部分~  时间序列算法常见时序模型   模型名称 描述     平滑法 常用于趋势分析和预测，根据平滑技术可区分为移动平均法和指数平滑法   趋势拟合法 把时间作为自变量，相应的序列观察值作为因变量，简历回归模型。可分为线性拟合和曲线拟">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/11/29/python时间序列/model.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/29/python时间序列/step2.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/29/python时间序列/step3.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/29/python时间序列/step5-1.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/29/python时间序列/step5-2.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/29/python时间序列/step5-3.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/29/python时间序列/step6.png">
+<meta property="og:updated_time" content="2019-01-03T15:36:23.498Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python时间序列">
+<meta name="twitter:description" content="曾经一个项目里面有用到时间序列，但是当时由于赶进度，主要精力放在了模型实现上。但是“知其然而不知其所以然”的知识点，对我来说是最容易遗忘的，所以在周末学习一下概念部分~  时间序列算法常见时序模型   模型名称 描述     平滑法 常用于趋势分析和预测，根据平滑技术可区分为移动平均法和指数平滑法   趋势拟合法 把时间作为自变量，相应的序列观察值作为因变量，简历回归模型。可分为线性拟合和曲线拟">
+<meta name="twitter:image" content="http://yoursite.com/2018/11/29/python时间序列/model.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":0,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/11/29/python时间序列/"/>
+
+
+
+
+
+  <title>python时间序列 | 数据分析笔记</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">数据分析笔记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-table"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/29/python时间序列/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IvyJin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据分析笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python时间序列</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-29T17:09:40+08:00">
+                2018-11-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>曾经一个项目里面有用到时间序列，但是当时由于赶进度，主要精力放在了模型实现上。但是“知其然而不知其所以然”的知识点，对我来说是最容易遗忘的，所以在周末学习一下概念部分~</p>
+</blockquote>
+<h1 id="时间序列算法"><a href="#时间序列算法" class="headerlink" title="时间序列算法"></a>时间序列算法</h1><h2 id="常见时序模型"><a href="#常见时序模型" class="headerlink" title="常见时序模型"></a>常见时序模型</h2><table>
+<thead>
+<tr>
+<th>模型名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>平滑法</td>
+<td>常用于趋势分析和预测，根据平滑技术可区分为移动平均法和指数平滑法</td>
+</tr>
+<tr>
+<td>趋势拟合法</td>
+<td>把时间作为自变量，相应的序列观察值作为因变量，简历回归模型。可分为线性拟合和曲线拟合</td>
+</tr>
+<tr>
+<td>AR模型</td>
+<td>x<sub>t</sub> = φ<sub>0</sub> + φ<sub>1</sub>x<sub>t-1</sub> + φ<sub>2</sub>x<sub>t-2</sub> + … + + φ<sub>p</sub>x<sub>t-p</sub> + 𝜀<sub>t</sub> ，是以前p期的序列模型为自变量、随机变量X<sub>t</sub>为因变量建立线性回归模型</td>
+</tr>
+<tr>
+<td>MA模型</td>
+<td>x<sub>t</sub> = μ + 𝜀<sub>t</sub> - θ1𝜀<sub>t-1</sub> - θ2𝜀<sub>t-2</sub> - … -  - θ<sub>q</sub>𝜀<sub>t-q</sub>，随机变量X<sub>t</sub>的趋势x<sub>t</sub>与以前各期的序列值无关，建立x<sub>t</sub>与前q期的随机扰动𝜀<sub>t-1</sub>,𝜀<sub>t-2</sub>,…,𝜀<sub>t-q</sub>的线性回归模型</td>
+</tr>
+<tr>
+<td>ARMA模型</td>
+<td>x<sub>t</sub> = φ<sub>0</sub> + φ<sub>1</sub>x<sub>t-1</sub> + φ<sub>2</sub>x<sub>t-2</sub> + … + + φ<sub>p</sub>x<sub>t-p</sub> + 𝜀<sub>t</sub> - θ1𝜀<sub>t-1</sub> - θ2𝜀<sub>t-2</sub> - … -  - θ<sub>q</sub>𝜀<sub>t-q</sub>,随机变量X<sub>t</sub>和前期p期的序列值和前q期的随机扰动都有关</td>
+</tr>
+<tr>
+<td>ARIMA</td>
+<td>对于非平稳时间序列，如果差分后显示出平稳序列的性质吗，则称为差分平稳序列，可通过ARIMA模型进行拟合</td>
+</tr>
+</tbody>
+</table>
+<h2 id="AR模型"><a href="#AR模型" class="headerlink" title="AR模型"></a>AR模型</h2><p>自相关系数ACF具有拖尾性<br>偏自相关系数PACF具有p阶截尾性</p>
+<h2 id="MA模型"><a href="#MA模型" class="headerlink" title="MA模型"></a>MA模型</h2><p>自相关系数ACF具有q阶截尾性<br>偏自相关系数PACF具有拖尾性</p>
+<h2 id="ARMA模型"><a href="#ARMA模型" class="headerlink" title="ARMA模型"></a>ARMA模型</h2><p>自相关系数ACF具有拖尾性<br>偏自相关系数PACF具有拖尾性</p>
+<h2 id="ARIMA"><a href="#ARIMA" class="headerlink" title="ARIMA"></a>ARIMA</h2><p>ARIMA(p,d,q):d表示使非平稳时间序列，成为平稳序列所做的<strong>差分次数</strong>（阶数）</p>
+<h1 id="python主要时序模式算法"><a href="#python主要时序模式算法" class="headerlink" title="python主要时序模式算法"></a>python主要时序模式算法</h1><p><img src="/2018/11/29/python时间序列/model.png" alt="model"></p>
+<h1 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h1><h2 id="step1：数据准备"><a href="#step1：数据准备" class="headerlink" title="step1：数据准备"></a>step1：数据准备</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 库导入</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> DataFrame,Series</span><br><span class="line"><span class="comment"># 数据读取</span></span><br><span class="line">data = pd.read_csv(<span class="string">'data.csv'</span>,index_col=<span class="string">u'date'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="step2：时序图"><a href="#step2：时序图" class="headerlink" title="step2：时序图"></a>step2：时序图</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="comment"># 解决中文乱码问题</span></span><br><span class="line">plt.rcParams[<span class="string">'font.family'</span>]=[<span class="string">'DejaVu Sans'</span>]</span><br><span class="line"><span class="comment"># 解决负号显示不正常问题</span></span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>]=<span class="keyword">False</span></span><br><span class="line">data.plot()</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/11/29/python时间序列/step2.png" alt="step2"></p>
+<h2 id="step3：自相关图"><a href="#step3：自相关图" class="headerlink" title="step3：自相关图"></a>step3：自相关图</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> statsmodels.graphics.tsaplots <span class="keyword">import</span> plot_acf</span><br><span class="line">plot_acf(data).show()</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/11/29/python时间序列/step3.png" alt="step3"></p>
+<h2 id="step4：平稳性检测"><a href="#step4：平稳性检测" class="headerlink" title="step4：平稳性检测"></a>step4：平稳性检测</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> statsmodels.tsa.stattools <span class="keyword">import</span> adfuller <span class="keyword">as</span> ADF</span><br><span class="line">print(ADF(data[<span class="string">'numbers'</span>]))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>(-0.36238843167758167, 0.9161917029835999, 15, 547, {‘1%’: -3.4423614311926514, ‘5%’: -2.866838307535097, ‘10%’: -2.56959181953083}, 9882.374666014583)</p>
+</blockquote>
+<h2 id="step5：差分"><a href="#step5：差分" class="headerlink" title="step5：差分"></a>step5：差分</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一阶差分</span></span><br><span class="line">D_data = data.diff().dropna()</span><br><span class="line">D_data.plot()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 自相关图</span></span><br><span class="line">plot_acf(D_data).show()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 偏自相关图</span></span><br><span class="line"><span class="keyword">from</span> statsmodels.graphics.tsaplots <span class="keyword">import</span> plot_pacf</span><br><span class="line">plot_pacf(D_data).show()</span><br></pre></td></tr></table></figure>
+<h3 id="一阶差分后数据稳定"><a href="#一阶差分后数据稳定" class="headerlink" title="一阶差分后数据稳定"></a>一阶差分后数据稳定</h3><p><img src="/2018/11/29/python时间序列/step5-1.png" alt="step5-1"></p>
+<h3 id="自相关图：p-1后呈拖尾性"><a href="#自相关图：p-1后呈拖尾性" class="headerlink" title="自相关图：p=1后呈拖尾性"></a>自相关图：p=1后呈拖尾性</h3><p><img src="/2018/11/29/python时间序列/step5-2.png" alt="step5-2"></p>
+<h3 id="偏自相关图：q-0呈截尾性"><a href="#偏自相关图：q-0呈截尾性" class="headerlink" title="偏自相关图：q=0呈截尾性"></a>偏自相关图：q=0呈截尾性</h3><p><img src="/2018/11/29/python时间序列/step5-3.png" alt="step5-3"></p>
+<h2 id="step6：白噪声检验"><a href="#step6：白噪声检验" class="headerlink" title="step6：白噪声检验"></a>step6：白噪声检验</h2><p>白噪声检验现在还看不太懂，先记一下计算方法<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> statsmodels.stats.diagnostic <span class="keyword">import</span> acorr_ljungbox</span><br><span class="line">print(<span class="string">'差分序列ADF检验结果为:'</span>,acorr_ljungbox(D_data,lags=<span class="number">1</span>))</span><br></pre></td></tr></table></figure></p>
+<h2 id="step6：建模"><a href="#step6：建模" class="headerlink" title="step6：建模"></a>step6：建模</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> statsmodels.tsa.arima_model <span class="keyword">import</span>  ARIMA</span><br><span class="line">model = ARIMA(data,(<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>)).fit()</span><br><span class="line"><span class="comment"># 模型输出</span></span><br><span class="line">model.summary2()</span><br><span class="line"><span class="comment"># 预测未来5天的结果</span></span><br><span class="line">print(model.forecast(<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+<h3 id="模型结果"><a href="#模型结果" class="headerlink" title="模型结果"></a>模型结果</h3><p><img src="/2018/11/29/python时间序列/step6.png" alt="step6"></p>
+<h3 id="预测结果"><a href="#预测结果" class="headerlink" title="预测结果"></a>预测结果</h3><blockquote>
+<p>(array([35408.68736862, 35465.68377014, 35518.15893015, 35570.75203915,<br>       35623.34207112]), array([2381.65577403, 3324.52622994, 4054.65005489, 4672.01275504,<br>       5216.8212946 ]), array([[30740.72782795, 40076.64690929],<br>       [28949.73209379, 41981.63544649],<br>       [27571.19085266, 43465.12700765],<br>       [26413.77530396, 44727.72877433],<br>       [25398.56021992, 45848.12392231]]))</p>
+</blockquote>
+<p>s<br>参考资料：<br><a href="https://www.analyticsvidhya.com/blog/2016/02/time-series-forecasting-codes-python/" target="_blank" rel="noopener">创建一个时间序列预测模型</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/时间序列/" rel="tag"># 时间序列</a>
+          
+            <a href="/tags/statistics/" rel="tag"># statistics</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/29/DataFrame字符串转化为时间/" rel="next" title="DataFrame字符串转化为时间">
+                <i class="fa fa-chevron-left"></i> DataFrame字符串转化为时间
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/08/python爬虫/" rel="prev" title="python爬虫">
+                python爬虫 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="IvyJin" />
+            
+              <p class="site-author-name" itemprop="name">IvyJin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#时间序列算法"><span class="nav-number">1.</span> <span class="nav-text">时间序列算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常见时序模型"><span class="nav-number">1.1.</span> <span class="nav-text">常见时序模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AR模型"><span class="nav-number">1.2.</span> <span class="nav-text">AR模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MA模型"><span class="nav-number">1.3.</span> <span class="nav-text">MA模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ARMA模型"><span class="nav-number">1.4.</span> <span class="nav-text">ARMA模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ARIMA"><span class="nav-number">1.5.</span> <span class="nav-text">ARIMA</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python主要时序模式算法"><span class="nav-number">2.</span> <span class="nav-text">python主要时序模式算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实际应用"><span class="nav-number">3.</span> <span class="nav-text">实际应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#step1：数据准备"><span class="nav-number">3.1.</span> <span class="nav-text">step1：数据准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#step2：时序图"><span class="nav-number">3.2.</span> <span class="nav-text">step2：时序图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#step3：自相关图"><span class="nav-number">3.3.</span> <span class="nav-text">step3：自相关图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#step4：平稳性检测"><span class="nav-number">3.4.</span> <span class="nav-text">step4：平稳性检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#step5：差分"><span class="nav-number">3.5.</span> <span class="nav-text">step5：差分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一阶差分后数据稳定"><span class="nav-number">3.5.1.</span> <span class="nav-text">一阶差分后数据稳定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自相关图：p-1后呈拖尾性"><span class="nav-number">3.5.2.</span> <span class="nav-text">自相关图：p=1后呈拖尾性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#偏自相关图：q-0呈截尾性"><span class="nav-number">3.5.3.</span> <span class="nav-text">偏自相关图：q=0呈截尾性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#step6：白噪声检验"><span class="nav-number">3.6.</span> <span class="nav-text">step6：白噪声检验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#step6：建模"><span class="nav-number">3.7.</span> <span class="nav-text">step6：建模</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型结果"><span class="nav-number">3.7.1.</span> <span class="nav-text">模型结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预测结果"><span class="nav-number">3.7.2.</span> <span class="nav-text">预测结果</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">IvyJin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>

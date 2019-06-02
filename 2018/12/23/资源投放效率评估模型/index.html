@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="OLS,建模 - 项目经验," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="2018年9月接了专辑完播预测模型，2018年12月底才算基本完成第一期。不知道最后投入应用效果会如何，但对我自己的意义是很大的。了解到很多统计学知识，包括时间序列、最小二乘回归、泊松回归、负二项回归、零膨胀Poisson回归等，还初步掌握statsmodels的应用。其中收获最多的是：a.首次重度依赖python完成一个项目，已经可以熟练进行数据读取、处理、建模和可视化呈现，b.将实际问题转化为">
+<meta name="keywords" content="OLS,建模 - 项目经验">
+<meta property="og:type" content="article">
+<meta property="og:title" content="资源投放效率评估模型">
+<meta property="og:url" content="http://yoursite.com/2018/12/23/资源投放效率评估模型/index.html">
+<meta property="og:site_name" content="数据分析笔记">
+<meta property="og:description" content="2018年9月接了专辑完播预测模型，2018年12月底才算基本完成第一期。不知道最后投入应用效果会如何，但对我自己的意义是很大的。了解到很多统计学知识，包括时间序列、最小二乘回归、泊松回归、负二项回归、零膨胀Poisson回归等，还初步掌握statsmodels的应用。其中收获最多的是：a.首次重度依赖python完成一个项目，已经可以熟练进行数据读取、处理、建模和可视化呈现，b.将实际问题转化为">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/12/23/资源投放效率评估模型/1_yidongpingjun.png">
+<meta property="og:image" content="http://yoursite.com/2018/12/23/资源投放效率评估模型/2_yidongpingjun.png">
+<meta property="og:image" content="http://yoursite.com/2018/12/23/资源投放效率评估模型/3_OLS.png">
+<meta property="og:updated_time" content="2019-01-13T11:25:26.199Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="资源投放效率评估模型">
+<meta name="twitter:description" content="2018年9月接了专辑完播预测模型，2018年12月底才算基本完成第一期。不知道最后投入应用效果会如何，但对我自己的意义是很大的。了解到很多统计学知识，包括时间序列、最小二乘回归、泊松回归、负二项回归、零膨胀Poisson回归等，还初步掌握statsmodels的应用。其中收获最多的是：a.首次重度依赖python完成一个项目，已经可以熟练进行数据读取、处理、建模和可视化呈现，b.将实际问题转化为">
+<meta name="twitter:image" content="http://yoursite.com/2018/12/23/资源投放效率评估模型/1_yidongpingjun.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":0,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/23/资源投放效率评估模型/"/>
+
+
+
+
+
+  <title>资源投放效率评估模型 | 数据分析笔记</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">数据分析笔记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-table"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/23/资源投放效率评估模型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IvyJin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据分析笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">资源投放效率评估模型</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-23T17:52:34+08:00">
+                2018-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>2018年9月接了专辑完播预测模型，2018年12月底才算基本完成第一期。不知道最后投入应用效果会如何，但对我自己的意义是很大的。了解到很多统计学知识，包括时间序列、最小二乘回归、泊松回归、负二项回归、零膨胀Poisson回归等，还初步掌握statsmodels的应用。其中收获最多的是：a.首次重度依赖python完成一个项目，已经可以熟练进行数据读取、处理、建模和可视化呈现，b.将实际问题转化为数据模型，以及更好的数据解读能力。</p>
+<blockquote>
+<p>模型概览：</p>
+<blockquote>
+<p>目的：提高内容分发效率<br>简介：通过可能影响专辑完播的因素，包括：曝光、历史完播、上传节目数和是否工作日来拟合专辑的当前完播。其中曝光的系数是曝光吸收度，历史完播系数是专辑自成长系数，上传节目数是主播投入，是否工作日是周期性影响因素。</p>
+</blockquote>
+</blockquote>
+<h1 id="项目历程"><a href="#项目历程" class="headerlink" title="项目历程"></a>项目历程</h1><p>2018.8:大部分时间在整理数据，一开始计划直接清洗日志数据，结果发现非常麻烦麻烦麻烦…… a.历史数据中脏数据太多，数据存储格式又有较大差异；b.数据量太大，等待时间长<br>2018.9.10:尝试时间序列，发现只用历史专辑完播得到拟合效果已经很好，只用少数时间点存在较大误差<br><img src="/2018/12/23/资源投放效率评估模型/1_yidongpingjun.png" alt="移动平均"><br>2018.9.18:用前7日完播、专辑质量分、是否工作日、上传节目数建模等变量进行建模；并对量级大的数据做对数处理<br>2018.10.10:确定主要变量为前7日完播、专辑质量分、是否工作日、上传节目数；并尝试用零膨胀模型消除源数据中零样本数据的干扰<br>2018.10.26:考虑到数据为count data，尝试用poisson回归进行拟合<br>2018.11.08:最终确定用OLS回归，前期工作暂且结束，准备输出数据产品<br>2018.11.22:完成数据输出，开始结果分析<br>2018.12.3:模型输出系数波动较为剧烈，推测是变量之间的共线性影响<br>2018.12.14:进行变量删减，单用曝光、t-1完播、上传声音数和是否工作日后，各变量的系数波动明显变缓<br>2018.12.21:确定先投入应用，监测监测效果</p>
+<h1 id="一些值得记录的tips"><a href="#一些值得记录的tips" class="headerlink" title="一些值得记录的tips"></a>一些值得记录的tips</h1><p>1.尽量少在整理数据上用太多时间，分析师主要还是验证思路可行性，理顺业务和数据的逻辑<br>2.应用新算法时，先看document里面的简单案例，copy代码执行一遍；再套用对应业务数据，以及了解其中的统计学知识<br>3.在数据应用的时候，准确性很重要，但是要普遍应用，往往需要更重视简单性和可解释性<br>4.最终结果呈现的时候，通过一些典型的、或者大家都知道的案例，会比展示一堆分布图有效<br>5.在展示分布的时候，如果散点图拥挤，可以用四分位数作折线图进行展示</p>
+<h1 id="我的代码"><a href="#我的代码" class="headerlink" title="我的代码"></a>我的代码</h1><h2 id="移动平均"><a href="#移动平均" class="headerlink" title="移动平均"></a>移动平均</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入包</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> sklearn </span><br><span class="line"><span class="comment"># 数据读取</span></span><br><span class="line">dateparse = <span class="keyword">lambda</span> dates: pd.datetime.strptime(dates, <span class="string">'%Y-%m'</span>)</span><br><span class="line">data = pd.read_csv(<span class="string">"data/data_demo.csv"</span>, parse_dates=[<span class="string">'date'</span>],index_col=<span class="string">'date'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> statsmodels.tsa.stattools <span class="keyword">import</span> adfuller</span><br><span class="line"><span class="comment"># 创建函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_stationarity</span><span class="params">(timeseries,window)</span>:</span></span><br><span class="line"><span class="comment">#	Determing rolling statistics</span></span><br><span class="line">    rolmean = timeseries.rolling(window=window).mean()</span><br><span class="line">    rolstd = timeseries.rolling(window=window).std()</span><br><span class="line">    rolmean1 = timeseries.rolling(window=<span class="number">15</span>).mean()</span><br><span class="line">    rolmean2 = timeseries.rolling(window=<span class="number">30</span>).mean()</span><br><span class="line"><span class="comment">#	Plot rolling statistics:</span></span><br><span class="line">    plt.figure(<span class="number">1</span>,figsize=(<span class="number">20</span>,<span class="number">10</span>))</span><br><span class="line"><span class="comment">#   plt.figure(1,figsize=(30,15))</span></span><br><span class="line">    plt.subplot(<span class="number">221</span>)</span><br><span class="line">    orig = plt.plot(timeseries, color=<span class="string">'gray'</span>,label=<span class="string">'Original'</span>)</span><br><span class="line">    mean = plt.plot(rolmean, color=<span class="string">'red'</span>, label=<span class="string">'Rolling Mean 7day'</span>)</span><br><span class="line">    mean2 = plt.plot(rolmean1, color=<span class="string">'green'</span>, label=<span class="string">'Rolling Mean 15day'</span>)</span><br><span class="line">    mean3 = plt.plot(rolmean2, color=<span class="string">'blue'</span>, label=<span class="string">'Rolling Mean 30day'</span>)</span><br><span class="line"><span class="comment">#   plt.legend(loc='best',fontsize=12)</span></span><br><span class="line"><span class="comment">#   plt.figure(3,figsize=(20,10))</span></span><br><span class="line"><span class="comment">#   plt.subplot(223)</span></span><br><span class="line">    std = plt.plot(rolstd, color=<span class="string">'orange'</span>, label = <span class="string">'Rolling Std'</span>)</span><br><span class="line">    plt.legend(loc=<span class="string">'best'</span>,fontsize=<span class="number">12</span>)</span><br><span class="line">    plt.title(<span class="string">'Rolling Mean &amp; Standard Deviation'</span>)</span><br><span class="line">    plt.show(block=<span class="keyword">False</span>)</span><br><span class="line">    </span><br><span class="line"><span class="comment">#   Perform Dickey-Fuller test:</span></span><br><span class="line">    print(<span class="string">'Results of Dickey-Fuller Test:'</span>)</span><br><span class="line">    dftest = adfuller(timeseries, autolag=<span class="string">'AIC'</span>)</span><br><span class="line">    dfoutput = pd.Series(dftest[<span class="number">0</span>:<span class="number">4</span>], index=[<span class="string">'Test Statistic'</span>,<span class="string">'p-value'</span>,<span class="string">'#Lags Used'</span>,<span class="string">'Number of Observations Used'</span>])</span><br><span class="line">    <span class="keyword">for</span> key,value <span class="keyword">in</span> dftest[<span class="number">4</span>].items():</span><br><span class="line">        dfoutput[<span class="string">'Critical Value (%s)'</span>%key] = value</span><br><span class="line">    print(dfoutput)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 样本提取</span></span><br><span class="line">data_1 = data[data[<span class="string">'id'</span>]==<span class="number">123</span>]</span><br><span class="line">ts = data_1[<span class="string">'value'</span>]</span><br><span class="line">test_stationarity(ts,<span class="number">7</span>)</span><br></pre></td></tr></table></figure>
+<p>结果如图，这时7日移动平均线拟合效果已经很好了<br><img src="/2018/12/23/资源投放效率评估模型/2_yidongpingjun.png" alt="移动平均"></p>
+<h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><p>调用statsmodels，实现线性回归非常的简单，只需要y和X都是矩阵，<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入包</span></span><br><span class="line"><span class="keyword">import</span> statsmodels.formula.api <span class="keyword">as</span> smf</span><br><span class="line"><span class="comment"># 执行模型</span></span><br><span class="line">ols_model =  smf.OLS(y,X).fit()</span><br><span class="line"><span class="comment"># 输出结果</span></span><br><span class="line">print(ols_model.summary2())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 泊松回归也一样</span></span><br><span class="line">poisson_model =  smf.Poisson(y,X).fit()</span><br><span class="line">print(poisson_model.summary2())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看拟合效果</span></span><br><span class="line">rank = data[<span class="string">'endplay_uv'</span>].groupby(data[<span class="string">'album_id'</span>]).max()</span><br><span class="line">rank = DataFrame(album_rank)</span><br><span class="line">rank = album_rank.sort_index(by=[<span class="string">'endplay_uv'</span>])</span><br><span class="line">list = album_rank[<span class="number">24000</span>:<span class="number">24002</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> id <span class="keyword">in</span> list.index:</span><br><span class="line">    album_0 = data[data[<span class="string">'album_id'</span>]==id][[<span class="string">'date'</span>,<span class="string">'album_id'</span>,<span class="string">'album_name'</span>,<span class="string">'endplay_uv'</span>,<span class="string">'endplay_uv_log'</span>,<span class="string">'show_uv'</span>,<span class="string">'upload_7days'</span>,<span class="string">'album_score'</span>,<span class="string">'endplay_uv_1'</span>,<span class="string">'endplay_uv_2'</span>,<span class="string">'endplay_uv_3'</span>,<span class="string">'endplay_uv_4'</span>,<span class="string">'endplay_uv_5'</span>,<span class="string">'endplay_uv_6'</span>,<span class="string">'endplay_uv_7'</span>,<span class="string">'is_weekend'</span>]]</span><br><span class="line">    album_1 = album_0[[<span class="string">'show_uv'</span>,<span class="string">'upload_7days'</span>,<span class="string">'album_score'</span>,<span class="string">'endplay_uv_1'</span>,<span class="string">'endplay_uv_2'</span>,<span class="string">'endplay_uv_3'</span>,<span class="string">'endplay_uv_4'</span>,<span class="string">'endplay_uv_5'</span>,<span class="string">'endplay_uv_6'</span>,<span class="string">"endplay_uv_7"</span>]]</span><br><span class="line">    groups_0 = np.array(album_0[<span class="string">'is_weekend'</span>])</span><br><span class="line">    dummy_0= sm.categorical(groups_0, drop=<span class="keyword">True</span>)</span><br><span class="line">    X_0 = np.column_stack((album_1, dummy_0))</span><br><span class="line"><span class="comment"># X = sm.add_constant(X)</span></span><br><span class="line">    y_0 = np.array(album_0[<span class="string">'endplay_uv_log'</span>])</span><br><span class="line">    endplay_uv_0 = np.array(album_0[<span class="string">'endplay_uv'</span>])</span><br><span class="line">    results_0 = smf.OLS(y_0,X_0).fit()</span><br><span class="line"><span class="comment">#     print(results_0.summary2())</span></span><br><span class="line">    y_fitted = results_0.fittedvalues</span><br><span class="line">    endplay_uv_predict = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> y_fitted:</span><br><span class="line">        fitted = math.exp(i)</span><br><span class="line">        endplay_uv_predict.append(fitted)</span><br><span class="line">    fig, ax = plt.subplots(figsize=(<span class="number">10</span>,<span class="number">8</span>))</span><br><span class="line">    plt.subplots_adjust(bottom=<span class="number">0.5</span>)</span><br><span class="line">    plt.xticks(rotation=<span class="number">25</span>)</span><br><span class="line"><span class="comment">#     plt.ylim(0, 15)</span></span><br><span class="line">    ax.plot(album_0[<span class="string">'date'</span>], endplay_uv_0, label=<span class="string">"true_value"</span>,color=<span class="string">'red'</span>)</span><br><span class="line">    ax.plot(album_0[<span class="string">'date'</span>], endplay_uv_predict, label=<span class="string">"predict_value"</span>,color=<span class="string">'gray'</span>)</span><br><span class="line">    ax.legend(loc=<span class="string">'best'</span>)</span><br><span class="line">    ax.set_title(album_0[<span class="string">'album_name'</span>].unique())</span><br></pre></td></tr></table></figure></p>
+<p>结果如图，可以看到在存在大的波动时，拟合效果也十分好<br><img src="/2018/12/23/资源投放效率评估模型/3_OLS.png" alt="线性回归"></p>
+<h2 id="模型验证"><a href="#模型验证" class="headerlink" title="模型验证"></a>模型验证</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入包</span></span><br><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> DataFrame,Series</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> statsmodels.api <span class="keyword">as</span> sm</span><br><span class="line"><span class="keyword">import</span> statsmodels.formula.api <span class="keyword">as</span> smf</span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>]=<span class="keyword">False</span></span><br><span class="line"><span class="comment"># 数据读取</span></span><br><span class="line">data = pd.read_csv(<span class="string">'album_weight.csv'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看不同类别样本量，确定展示阈值</span></span><br><span class="line">album_count = data[<span class="string">'album_id'</span>].groupby(data[<span class="string">'category'</span>]).count()</span><br><span class="line">album_count = DataFrame(album_count)</span><br><span class="line">album_count = album_count.sort_values(by = <span class="string">'album_id'</span>,ascending=<span class="keyword">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果可视化，由于数据敏感性，不展示图示结果</span></span><br><span class="line">fig,ax=plt.subplots(figsize=(<span class="number">12</span>,<span class="number">5</span>))</span><br><span class="line">x = album_count.index</span><br><span class="line">y = album_count[<span class="string">'album_id'</span>]</span><br><span class="line">ax.bar(x,y)</span><br><span class="line"><span class="keyword">for</span> xx, yy <span class="keyword">in</span> zip(x,y):</span><br><span class="line">    plt.text(xx, yy+<span class="number">1000</span>, str(round(yy,<span class="number">2</span>)), ha=<span class="string">'center'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据转化</span></span><br><span class="line">week = []</span><br><span class="line"><span class="keyword">for</span> id <span class="keyword">in</span> album_time[<span class="string">'create_days'</span>]:</span><br><span class="line">    week_tmp = math.floor((id<span class="number">-1</span>)/<span class="number">7</span>)+<span class="number">1</span></span><br><span class="line">    week.append(week_tmp)</span><br><span class="line">week = DataFrame(week,columns=[<span class="string">'week'</span>])</span><br><span class="line">album_week = pd.concat((data,week),axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按专辑上线周数查看曝光系数变化</span></span><br><span class="line">num=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> category_tmp <span class="keyword">in</span> category:</span><br><span class="line">    n = <span class="number">50</span></span><br><span class="line">    m = <span class="number">1</span></span><br><span class="line">    num += <span class="number">1</span></span><br><span class="line"><span class="comment"># 设置子图</span></span><br><span class="line">    plt.figure(figsize=(<span class="number">5</span>,<span class="number">50</span>))</span><br><span class="line">    ax = plt.subplot(<span class="number">20</span>,<span class="number">1</span>,num)</span><br><span class="line"><span class="comment"># 折线图</span></span><br><span class="line">    test = album_week[album_week[<span class="string">'show_uv'</span>]&gt;=<span class="number">1000</span>&amp;(album_week[<span class="string">'week'</span>]&lt;=n)&amp;(album_week[<span class="string">'week'</span>]&gt;=m)]</span><br><span class="line"><span class="comment"># 计算四分位数</span></span><br><span class="line">    test_1 = test[<span class="string">'show_uv_weight'</span>].groupby(test[<span class="string">'week'</span>]).quantile(<span class="number">0.25</span>)</span><br><span class="line">    test_2 = test[<span class="string">'show_uv_weight'</span>].groupby(test[<span class="string">'week'</span>]).quantile(<span class="number">0.5</span>)</span><br><span class="line">    test_3 = test[<span class="string">'show_uv_weight'</span>].groupby(test[<span class="string">'week'</span>]).quantile(<span class="number">0.75</span>)</span><br><span class="line">    ax.plot(test_1,color=<span class="string">'grey'</span>)</span><br><span class="line">    ax.plot(test_2,color=<span class="string">'orange'</span>)</span><br><span class="line">    ax.plot(test_3,color=<span class="string">'pink'</span>)</span><br><span class="line">    ax.set_title(category_tmp)</span><br><span class="line"><span class="comment"># 其他维度的数据可视化处理方法相当，需要复用的时候可以参考上面</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>心路十八弯</p>
+<blockquote>
+<p>开始：感觉一个崭新的世界正在为我打开，有种“磨刀霍霍向牛羊”的快感，前方好像可以学习到很多新的东西，好开心！<br>调整：带这个项目的是一个统计学博士（非常感激的一个前辈），每次开会都有新的概念冒出来，好几次需要用到我没用过的东西，开会时脑袋先冒几个问号，哇，这个是啥?? 然后心生敬畏，想着好专业，我等下一定要学懂！！<br>执行：其实这个项目没有占用太多正常工作时间，基本都是把自己必须处理的事情处理完后，腾出时间来学习和执行，然后经常查一个概念会引出更多需要理解的东西，逐渐的有些怀疑自己了~<br>心态调整：很多理论的东西是需要不断学习、理解、记忆，然后在应用中实践夯实的。转而心态调整为先做到“知其然而不知其所以然”，先实现数据逻辑为上，概念相关的东西，慢慢啃吧。所以也给自己建了个算法的分类，以慢慢学习补充！<br>结束：一路升级打怪，虽然主要还是在执行层面，但还是蛮有成就感的，应该之后遇到类似的问题，我也能够迎刃而解了吧。</p>
+</blockquote>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/OLS/" rel="tag"># OLS</a>
+          
+            <a href="/tags/建模-项目经验/" rel="tag"># 建模 - 项目经验</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/16/python词云/" rel="next" title="python词云">
+                <i class="fa fa-chevron-left"></i> python词云
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/23/scipy/" rel="prev" title="scipy">
+                scipy <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="IvyJin" />
+            
+              <p class="site-author-name" itemprop="name">IvyJin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#项目历程"><span class="nav-number">1.</span> <span class="nav-text">项目历程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一些值得记录的tips"><span class="nav-number">2.</span> <span class="nav-text">一些值得记录的tips</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#我的代码"><span class="nav-number">3.</span> <span class="nav-text">我的代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#移动平均"><span class="nav-number">3.1.</span> <span class="nav-text">移动平均</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归"><span class="nav-number">3.2.</span> <span class="nav-text">线性回归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型验证"><span class="nav-number">3.3.</span> <span class="nav-text">模型验证</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">IvyJin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>

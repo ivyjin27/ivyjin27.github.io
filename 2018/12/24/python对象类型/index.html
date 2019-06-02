@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="数据类型," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="遥想我男票追我时，还会陪我一起看书、学习、码代码，软件工程毕业的他总“语重心长”的说，学编程语言要先学习数据结构。最近也算有了切身体会，python数据结构倒是看过几遍，就是记不住，于是找时间梳理梳理。  核心数据类型   对象类型 例子 常量/创建     数字 1234,3.1415,Decimal,Fraction   字符串 ‘spam’,”guido’s”   列表 [1,[2,’th">
+<meta name="keywords" content="数据类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python对象类型">
+<meta property="og:url" content="http://yoursite.com/2018/12/24/python对象类型/index.html">
+<meta property="og:site_name" content="数据分析笔记">
+<meta property="og:description" content="遥想我男票追我时，还会陪我一起看书、学习、码代码，软件工程毕业的他总“语重心长”的说，学编程语言要先学习数据结构。最近也算有了切身体会，python数据结构倒是看过几遍，就是记不住，于是找时间梳理梳理。  核心数据类型   对象类型 例子 常量/创建     数字 1234,3.1415,Decimal,Fraction   字符串 ‘spam’,”guido’s”   列表 [1,[2,’th">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-24T16:04:52.230Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python对象类型">
+<meta name="twitter:description" content="遥想我男票追我时，还会陪我一起看书、学习、码代码，软件工程毕业的他总“语重心长”的说，学编程语言要先学习数据结构。最近也算有了切身体会，python数据结构倒是看过几遍，就是记不住，于是找时间梳理梳理。  核心数据类型   对象类型 例子 常量/创建     数字 1234,3.1415,Decimal,Fraction   字符串 ‘spam’,”guido’s”   列表 [1,[2,’th">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":0,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/24/python对象类型/"/>
+
+
+
+
+
+  <title>python对象类型 | 数据分析笔记</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">数据分析笔记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-table"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/24/python对象类型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IvyJin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据分析笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python对象类型</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-24T20:42:03+08:00">
+                2018-12-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>遥想我男票追我时，还会陪我一起看书、学习、码代码，软件工程毕业的他总“语重心长”的说，学编程语言要先学习数据结构。最近也算有了切身体会，python数据结构倒是看过几遍，就是记不住，于是找时间梳理梳理。</p>
+</blockquote>
+<h1 id="核心数据类型"><a href="#核心数据类型" class="headerlink" title="核心数据类型"></a>核心数据类型</h1><table>
+<thead>
+<tr>
+<th>对象类型</th>
+<th>例子 常量/创建</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数字</td>
+<td>1234,3.1415,Decimal,Fraction</td>
+</tr>
+<tr>
+<td>字符串</td>
+<td>‘spam’,”guido’s”</td>
+</tr>
+<tr>
+<td>列表</td>
+<td>[1,[2,’three’],4]</td>
+</tr>
+<tr>
+<td>字典</td>
+<td>{‘food’:’spam’,’taste’:’yum’}</td>
+</tr>
+<tr>
+<td>元组</td>
+<td>(1,’spam’,4,’U’)</td>
+</tr>
+<tr>
+<td>文件</td>
+<td>myfile = open(‘eggs’,’r’)</td>
+</tr>
+<tr>
+<td>集合</td>
+<td>set(‘abc’){‘a’,’b’,’c’}</td>
+</tr>
+<tr>
+<td>其他类型</td>
+<td>类型、None、布尔型</td>
+</tr>
+<tr>
+<td>编程单元</td>
+<td>函数、模块、类</td>
+</tr>
+<tr>
+<td>与实现相关的类型</td>
+<td>编译的代码堆栈跟踪</td>
+</tr>
+</tbody>
+</table>
+<h1 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h1><p>常用的数据类型：整数、浮点数<br>一般数学运算：加法（+），减法（-），乘法（*），乘方（**）<br>数字输出的时候有全精度和用户友好形式，如果有的东西看起来比较奇怪，可以用print输出</p>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>记录文本信息</p>
+<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>单个字符的字符串的序列，python里面的序列还包括列表和元组</p>
+<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><h3 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h3><p>字符串 S =’Spam’<br>切片顺序：由左至右为：0，1，2……，从右至左为：-1，-2，-3……</p>
+<table>
+<thead>
+<tr>
+<th>操作描述</th>
+<th>案例</th>
+<th>输出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>取特定位置字符</td>
+<td>s[1]，s[-3]</td>
+<td>p</td>
+</tr>
+<tr>
+<td>提取特定范围字符串</td>
+<td>s<a href="为左闭右开区间，不包含index=3的字符">1:3</a></td>
+<td>pa</td>
+</tr>
+<tr>
+<td>从第2位取到最后</td>
+<td>s[1:]</td>
+<td>pam</td>
+</tr>
+<tr>
+<td>取前3个字符</td>
+<td>s[:3]</td>
+<td>spa</td>
+</tr>
+</tbody>
+</table>
+<h3 id="查找-find"><a href="#查找-find" class="headerlink" title="查找:find"></a>查找:find</h3><p>有点儿像Excel的find函数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s.find(<span class="string">'pa'</span>)</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>输出结果：1</p>
+</blockquote>
+<h3 id="替换-replace"><a href="#替换-replace" class="headerlink" title="替换:replace"></a>替换:replace</h3><p>类似SQL里面的正则表达式：regexp_replace<br>str.replace(old,new)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s.replace(<span class="string">'pa'</span>,<span class="string">'ABC'</span>)</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>输出结果：sABCm</p>
+</blockquote>
+<h3 id="分割-split"><a href="#分割-split" class="headerlink" title="分割:split"></a>分割:split</h3><p>案例<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">line = <span class="string">'aaa,bbb,cccc,dd'</span></span><br><span class="line">line.split(<span class="string">","</span>)</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>输出结果：[‘aaa’, ‘bbb’, ‘cccc’, ‘dd’]</p>
+</blockquote>
+<p>分割结果是一个列表<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a =line.split(<span class="string">","</span>)</span><br><span class="line">a[<span class="number">1</span>]</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>输出结果：bbb</p>
+</blockquote>
+<h3 id="格式化替代"><a href="#格式化替代" class="headerlink" title="格式化替代"></a>格式化替代</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># %s</span></span><br><span class="line"><span class="string">'%s, eggs,and %s'</span> % (<span class="string">'spam'</span>,<span class="string">'SPAM!'</span>)</span><br><span class="line"><span class="comment"># .format</span></span><br><span class="line"><span class="string">'&#123;0&#125;, eggs,and &#123;1&#125;'</span> .format(<span class="string">'spam'</span>,<span class="string">'SPAM!'</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>输出结果：’spam, eggs,and SPAM!’</p>
+</blockquote>
+<h3 id="模式匹配"><a href="#模式匹配" class="headerlink" title="模式匹配"></a>模式匹配</h3><p>类似sql正则表达式的应用，暂时把案例整理出来，之后运用的时候再拓展<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">match = re.match(<span class="string">'Hello[\t]*(.*)world'</span>,<span class="string">'Hello   Python world'</span>)</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>输出结果：(‘   Python ‘,)</p>
+</blockquote>
+<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>任意类型的对象的位置相关的有序集合，没有固定的大小。<br>列表的操作包括：序列操作、append、sort、reverse、嵌套和解析</p>
+<h1 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h1><h2 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h2><p>是一种映射，是python核心对象集合中的唯一的一种映射类型，特具有可变性</p>
+<h1 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h1><h2 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h2><p>可认为元组是不可以改变的列表<br>应用得不太频繁，但是它的关键在于不可变性；对于编写更大型的程序时比较方便</p>
+<h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">open(<span class="string">'.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">open(<span class="string">'.txt'</span>)</span><br><span class="line">open(<span class="string">'.bin'</span>,<span class="string">'rb'</span>).read()</span><br></pre></td></tr></table></figure>
+<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x = set(<span class="string">'spam'</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>输出结果：{‘a’, ‘m’, ‘p’, ‘s’}<br>操作有:</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>符号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>交集</td>
+<td>&amp;</td>
+</tr>
+<tr>
+<td>并集</td>
+<td>\</td>
+<td></td>
+</tr>
+<tr>
+<td>差集</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据类型/" rel="tag"># 数据类型</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/23/scipy/" rel="next" title="scipy">
+                <i class="fa fa-chevron-left"></i> scipy
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/25/sql行列转化-collect_set、collect_list、explode/" rel="prev" title="sql行列转化-collect_set、collect_list、explode">
+                sql行列转化-collect_set、collect_list、explode <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="IvyJin" />
+            
+              <p class="site-author-name" itemprop="name">IvyJin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#核心数据类型"><span class="nav-number">1.</span> <span class="nav-text">核心数据类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数字"><span class="nav-number">2.</span> <span class="nav-text">数字</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串"><span class="nav-number">3.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#作用"><span class="nav-number">3.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结构"><span class="nav-number">3.2.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作"><span class="nav-number">3.3.</span> <span class="nav-text">操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#切片"><span class="nav-number">3.3.1.</span> <span class="nav-text">切片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找-find"><span class="nav-number">3.3.2.</span> <span class="nav-text">查找:find</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#替换-replace"><span class="nav-number">3.3.3.</span> <span class="nav-text">替换:replace</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分割-split"><span class="nav-number">3.3.4.</span> <span class="nav-text">分割:split</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#格式化替代"><span class="nav-number">3.3.5.</span> <span class="nav-text">格式化替代</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模式匹配"><span class="nav-number">3.3.6.</span> <span class="nav-text">模式匹配</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#列表"><span class="nav-number">4.</span> <span class="nav-text">列表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">4.1.</span> <span class="nav-text">定义</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字典"><span class="nav-number">5.</span> <span class="nav-text">字典</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义-1"><span class="nav-number">5.1.</span> <span class="nav-text">定义</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#元组"><span class="nav-number">6.</span> <span class="nav-text">元组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义-2"><span class="nav-number">6.1.</span> <span class="nav-text">定义</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件"><span class="nav-number">7.</span> <span class="nav-text">文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集合"><span class="nav-number">8.</span> <span class="nav-text">集合</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">IvyJin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>

@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="requests,爬虫," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="之前断断续续的学习了一些python爬虫相关的知识，但是一直没有好好总结一下，代码也仅仅局限于ctrl+c和ctrl+v。于是给自己一个任务：从拉勾网爬数据分析师JD，了解一下目前数据分析师的工资待遇、核心技能需求等。从这个课题立项到正式整理文章还是经过了几天时间，这几天也慢慢get到了爬虫的技能。python爬虫的包有requests/urllib/scrapy，数据提取工具有Beautifu">
+<meta name="keywords" content="requests,爬虫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python爬虫">
+<meta property="og:url" content="http://yoursite.com/2018/12/08/python爬虫/index.html">
+<meta property="og:site_name" content="数据分析笔记">
+<meta property="og:description" content="之前断断续续的学习了一些python爬虫相关的知识，但是一直没有好好总结一下，代码也仅仅局限于ctrl+c和ctrl+v。于是给自己一个任务：从拉勾网爬数据分析师JD，了解一下目前数据分析师的工资待遇、核心技能需求等。从这个课题立项到正式整理文章还是经过了几天时间，这几天也慢慢get到了爬虫的技能。python爬虫的包有requests/urllib/scrapy，数据提取工具有Beautifu">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-12T16:03:14.308Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python爬虫">
+<meta name="twitter:description" content="之前断断续续的学习了一些python爬虫相关的知识，但是一直没有好好总结一下，代码也仅仅局限于ctrl+c和ctrl+v。于是给自己一个任务：从拉勾网爬数据分析师JD，了解一下目前数据分析师的工资待遇、核心技能需求等。从这个课题立项到正式整理文章还是经过了几天时间，这几天也慢慢get到了爬虫的技能。python爬虫的包有requests/urllib/scrapy，数据提取工具有Beautifu">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":0,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/08/python爬虫/"/>
+
+
+
+
+
+  <title>python爬虫 | 数据分析笔记</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">数据分析笔记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-table"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/08/python爬虫/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IvyJin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据分析笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python爬虫</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-08T13:33:54+08:00">
+                2018-12-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>之前断断续续的学习了一些python爬虫相关的知识，但是一直没有好好总结一下，代码也仅仅局限于ctrl+c和ctrl+v。于是给自己一个任务：从拉勾网爬数据分析师JD，了解一下目前数据分析师的工资待遇、核心技能需求等。<br>从这个课题立项到正式整理文章还是经过了几天时间，这几天也慢慢get到了爬虫的技能。python爬虫的包有requests/urllib/scrapy，数据提取工具有BeautifulSoup和json。其中BeautifulSoup类似SQL，json接近于DataFrame。但是具体的差异和优劣，目前”技能库“还有所欠缺，仅仅记录下用requests爬取拉勾网职位列表和JD明细信息，并通过json和BeautifulSoup清洗数据的思路。</p>
+</blockquote>
+<h1 id="基础知识点梳理"><a href="#基础知识点梳理" class="headerlink" title="基础知识点梳理"></a>基础知识点梳理</h1><h2 id="requests"><a href="#requests" class="headerlink" title="requests"></a>requests</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">requests.method(url, data=<span class="keyword">None</span>, json=<span class="keyword">None</span>, **kwargs)</span><br><span class="line"><span class="comment"># 以拉勾网为例</span></span><br><span class="line">my_headers = &#123;  </span><br><span class="line">            <span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36'</span>,  </span><br><span class="line">            <span class="string">'Host'</span>:<span class="string">'www.lagou.com'</span>,  </span><br><span class="line">            <span class="string">'Referer'</span>:<span class="string">'https://www.lagou.com/jobs/list_%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90?labelWords=&amp;fromSearch=true&amp;suginput='</span>,  </span><br><span class="line">            <span class="string">'X-Anit-Forge-Code'</span>:<span class="string">'0'</span>,  </span><br><span class="line">            <span class="string">'X-Anit-Forge-Token'</span>: <span class="string">'None'</span>,  </span><br><span class="line">            <span class="string">'X-Requested-With'</span>:<span class="string">'XMLHttpRequest'</span>  </span><br><span class="line">            &#125;  </span><br><span class="line">url = <span class="string">'https://www.lagou.com/jobs/4784441.html'</span></span><br><span class="line">soup = requests.post(url=url,headers = my_headers)</span><br></pre></td></tr></table></figure>
+<p>参数列表：官方文档有描写很多参数，这里就简单整理几个常用的</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>method</td>
+<td>指定request对象的方法</td>
+</tr>
+<tr>
+<td>url</td>
+<td>指定Request 对象的 URL</td>
+</tr>
+<tr>
+<td>params（可选)</td>
+<td>指定 Request对象的查询字符串，可以是字典（Dict）或者字节数组（Bytes）</td>
+</tr>
+<tr>
+<td>data（可选）</td>
+<td>指定 Request 对象的 body 内容，可以是字典（Dict）、包含元组的列表 [(key, value)]、字节数组（Bytes）或者类文件对象</td>
+</tr>
+<tr>
+<td>json（可选）</td>
+<td>指定 Request 对象的 body 内容，是以 JSON 格式的形式</td>
+</tr>
+<tr>
+<td>headers（可选）</td>
+<td>指定 Request 对象的 HTTP 头部内容，是以字典（Dict）的形式</td>
+</tr>
+</tbody>
+</table>
+<h2 id="BeautifulSoup"><a href="#BeautifulSoup" class="headerlink" title="BeautifulSoup"></a>BeautifulSoup</h2><p>BeautifulSoup获取数据的方法有find_all()、find()、select，方法都大同小异，和SQL的原理有一丢丢相似<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 先解析爬虫结果</span></span><br><span class="line">soup = BeautifulSoup(soup.text, <span class="string">"html.parser"</span>)</span><br><span class="line"><span class="comment"># 从其中获取职位介绍，有以下几种方法</span></span><br><span class="line">soup.find(<span class="string">'div'</span>,<span class="string">'positiondesc'</span>).text</span><br><span class="line">soup.find_all(<span class="string">'div'</span>,<span class="string">'positiondesc'</span>)[<span class="number">0</span>].get_text()</span><br><span class="line">soup.select(<span class="string">"[class~=positiondesc]"</span>)</span><br></pre></td></tr></table></figure></p>
+<h1 id="爬取工作列表"><a href="#爬取工作列表" class="headerlink" title="爬取工作列表"></a>爬取工作列表</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_json</span><span class="params">(url,num)</span>:</span>  </span><br><span class="line">    <span class="string">'''''从网页获取JSON,使用POST请求,加上头部信息'''</span>  </span><br><span class="line">    my_headers = &#123;  </span><br><span class="line">            <span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36'</span>,  </span><br><span class="line">            <span class="string">'Host'</span>:<span class="string">'www.lagou.com'</span>,  </span><br><span class="line">            <span class="string">'Referer'</span>:<span class="string">'https://www.lagou.com/jobs/list_%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90?labelWords=&amp;fromSearch=true&amp;suginput='</span>,  </span><br><span class="line">            <span class="string">'X-Anit-Forge-Code'</span>:<span class="string">'0'</span>,  </span><br><span class="line">            <span class="string">'X-Anit-Forge-Token'</span>: <span class="string">'None'</span>,  </span><br><span class="line">            <span class="string">'X-Requested-With'</span>:<span class="string">'XMLHttpRequest'</span>  </span><br><span class="line">            &#125;  </span><br><span class="line"></span><br><span class="line">    my_data = &#123;  </span><br><span class="line">            <span class="string">'first'</span>: <span class="string">'true'</span>,  </span><br><span class="line">            <span class="string">'pn'</span>:num,  </span><br><span class="line">            <span class="string">'kd'</span>:<span class="string">'前端工程师'</span>&#125;  </span><br><span class="line"></span><br><span class="line">    res = requests.post(url, headers = my_headers, data = my_data)  </span><br><span class="line">    res.raise_for_status()  </span><br><span class="line">    res.encoding = <span class="string">'utf-8'</span>  </span><br><span class="line">    <span class="comment"># 得到包含职位信息的字典  </span></span><br><span class="line">    page = res.json()  </span><br><span class="line">    <span class="keyword">return</span> page  </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_page_num</span><span class="params">(count)</span>:</span>  </span><br><span class="line">    <span class="string">'''''计算要抓取的页数'''</span>  </span><br><span class="line">    <span class="comment"># 每页15个职位,向上取整  </span></span><br><span class="line">    res = math.ceil(count/<span class="number">15</span>)  </span><br><span class="line">    <span class="comment"># 拉勾网最多显示30页结果  </span></span><br><span class="line">    <span class="keyword">if</span> res &gt; <span class="number">30</span>:  </span><br><span class="line">        <span class="keyword">return</span> <span class="number">30</span>  </span><br><span class="line">    <span class="keyword">else</span>:  </span><br><span class="line">        <span class="keyword">return</span> res  </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_page_info</span><span class="params">(jobs_list)</span>:</span>  </span><br><span class="line">    <span class="string">'''''对一个网页的职位信息进行解析,返回列表'''</span>  </span><br><span class="line">    page_info_list = []  </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> jobs_list:  </span><br><span class="line">        job_info = []  </span><br><span class="line">        job_info.append(i[<span class="string">'companyFullName'</span>])  </span><br><span class="line">        job_info.append(i[<span class="string">'companyShortName'</span>])  </span><br><span class="line">        job_info.append(i[<span class="string">'companySize'</span>])  </span><br><span class="line">        job_info.append(i[<span class="string">'financeStage'</span>])  </span><br><span class="line">        job_info.append(i[<span class="string">'district'</span>])  </span><br><span class="line">        job_info.append(i[<span class="string">'positionName'</span>])  </span><br><span class="line">        job_info.append(i[<span class="string">'workYear'</span>])  </span><br><span class="line">        job_info.append(i[<span class="string">'education'</span>])  </span><br><span class="line">        job_info.append(i[<span class="string">'salary'</span>])  </span><br><span class="line">        job_info.append(i[<span class="string">'positionAdvantage'</span>])  </span><br><span class="line">        job_info.append(i[<span class="string">'positionId'</span>])</span><br><span class="line">        page_info_list.append(job_info)  </span><br><span class="line">    <span class="keyword">return</span> page_info_list  </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span>  </span><br><span class="line">    url = <span class="string">'https://www.lagou.com/jobs/positionAjax.json?city=%E4%B8%8A%E6%B5%B7&amp;needAddtionalResult=false'</span>  </span><br><span class="line">    <span class="comment"># 先设定页数为1,获取总的职位数  </span></span><br><span class="line">    page_1 = get_json(url,<span class="number">1</span>)  </span><br><span class="line">    total_count = page_1[<span class="string">'content'</span>][<span class="string">'positionResult'</span>][<span class="string">'totalCount'</span>]  </span><br><span class="line">    num = get_page_num(total_count)  </span><br><span class="line">    total_info = []  </span><br><span class="line">    time.sleep(<span class="number">20</span>)  </span><br><span class="line">    print(<span class="string">'职位总数:&#123;&#125;,页数:&#123;&#125;'</span>.format(total_count,num))  </span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">1</span>,num+<span class="number">1</span>):  </span><br><span class="line">        <span class="comment"># 对每个网页读取JSON, 获取每页数据  </span></span><br><span class="line">        page = get_json(url,n)  </span><br><span class="line">        jobs_list = page[<span class="string">'content'</span>][<span class="string">'positionResult'</span>][<span class="string">'result'</span>]  </span><br><span class="line">        page_info = get_page_info(jobs_list)  </span><br><span class="line">        total_info += page_info  </span><br><span class="line">        print(<span class="string">'已经抓取第&#123;&#125;页, 职位总数:&#123;&#125;'</span>.format(n, len(total_info)))  </span><br><span class="line">        <span class="comment"># 每次抓取完成后,暂停一会,防止被服务器拉黑  </span></span><br><span class="line">        time.sleep(<span class="number">30</span>)  </span><br><span class="line">    <span class="comment">#将总数据转化为data frame再输出  </span></span><br><span class="line">    df = pd.DataFrame(data = total_info,columns = [<span class="string">'companyFullName'</span>,<span class="string">'companyShortName'</span>,<span class="string">'companySize'</span>,<span class="string">'financeStage'</span>,<span class="string">'district'</span>,<span class="string">'positionName'</span>,<span class="string">'workYear'</span>,<span class="string">'education'</span>,<span class="string">'salary'</span>,<span class="string">'positionAdvantage'</span>,<span class="string">'positionId'</span>])  </span><br><span class="line">    df.to_csv(<span class="string">'lagou_jobs_qd.csv'</span>,index = <span class="keyword">False</span>)  </span><br><span class="line">    print(<span class="string">'已保存为csv文件.'</span>)  </span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__== <span class="string">"__main__"</span>:   </span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<h1 id="爬工作职责明细"><a href="#爬工作职责明细" class="headerlink" title="爬工作职责明细"></a>爬工作职责明细</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">df = pd.read_csv(<span class="string">'lagou_jobs.csv'</span>,encoding=<span class="string">'gbk'</span>)  </span><br><span class="line">df = DataFrame(df)</span><br><span class="line">positionid = df[(df[<span class="string">'workYear'</span>]==<span class="string">'3-5年'</span>)&amp;(df[<span class="string">'education'</span>]==<span class="string">'本科'</span>)&amp;(df[<span class="string">'companySize'</span>]==<span class="string">'2000人以上'</span>)][<span class="string">'positionId'</span>]</span><br><span class="line"></span><br><span class="line">jobs = []</span><br><span class="line">ids=[]</span><br><span class="line"><span class="keyword">for</span> id <span class="keyword">in</span> positionid[<span class="number">46</span>:]:</span><br><span class="line">    id = str(id)</span><br><span class="line">    url = <span class="string">'https://www.lagou.com/jobs/'</span> + id + <span class="string">'.html'</span></span><br><span class="line">    print(url)</span><br><span class="line">    my_headers = &#123;  </span><br><span class="line">            <span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36'</span>,  </span><br><span class="line">            <span class="string">'Host'</span>:<span class="string">'www.lagou.com'</span>,  </span><br><span class="line">            <span class="string">'Referer'</span>:<span class="string">'https://www.lagou.com/jobs/list_%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90?labelWords=&amp;fromSearch=true&amp;suginput='</span>,  </span><br><span class="line">            <span class="string">'X-Anit-Forge-Code'</span>:<span class="string">'0'</span>,  </span><br><span class="line">            <span class="string">'X-Anit-Forge-Token'</span>: <span class="string">'None'</span>,  </span><br><span class="line">            <span class="string">'X-Requested-With'</span>:<span class="string">'XMLHttpRequest'</span>  </span><br><span class="line">            &#125; </span><br><span class="line">    soup = requests.get(url,headers = my_headers)</span><br><span class="line">    soup = BeautifulSoup(soup.text, <span class="string">"html.parser"</span>)</span><br><span class="line">    <span class="keyword">if</span>  soup.find(<span class="string">'div'</span>,<span class="string">'positiondesc'</span>) <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">        print(<span class="string">'positiondesc 为空'</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        job_des = soup.find(<span class="string">'div'</span>,<span class="string">'positiondesc'</span>).text</span><br><span class="line">        ids.append(id)</span><br><span class="line">        jobs.append(job_des)</span><br><span class="line">        time.sleep(<span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="关联列表与工作职责"><a href="#关联列表与工作职责" class="headerlink" title="关联列表与工作职责"></a>关联列表与工作职责</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">data = np.column_stack((ids,jobs))</span><br><span class="line">data = DataFrame(data,columns=[<span class="string">'positionId'</span>,<span class="string">'job_desc'</span>])</span><br><span class="line">data[<span class="string">'positionId'</span>] = data[<span class="string">'positionId'</span>].astype(<span class="string">'int'</span>)</span><br><span class="line">pd.merge(data,df,on=<span class="string">'positionId'</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h1><h2 id="城市码"><a href="#城市码" class="headerlink" title="城市码"></a>城市码</h2><p>encodeURIComponent(‘上海’)<br>%E4%B8%8A%E6%B5%B7</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://docs.python-requests.org/zh_CN/latest/user/quickstart.html" target="_blank" rel="noopener">requests</a><br><a href="https://beautifulsoup.readthedocs.io/zh_CN/latest/#id18" target="_blank" rel="noopener">BeautifulSoup</a><br><a href="http://www.runoob.com/python/python-json.html" target="_blank" rel="noopener">json</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/requests/" rel="tag"># requests</a>
+          
+            <a href="/tags/爬虫/" rel="tag"># 爬虫</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/29/时间序列/" rel="next" title="时间序列">
+                <i class="fa fa-chevron-left"></i> 时间序列
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/16/python词云/" rel="prev" title="python词云">
+                python词云 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="IvyJin" />
+            
+              <p class="site-author-name" itemprop="name">IvyJin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础知识点梳理"><span class="nav-number">1.</span> <span class="nav-text">基础知识点梳理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#requests"><span class="nav-number">1.1.</span> <span class="nav-text">requests</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BeautifulSoup"><span class="nav-number">1.2.</span> <span class="nav-text">BeautifulSoup</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#爬取工作列表"><span class="nav-number">2.</span> <span class="nav-text">爬取工作列表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#爬工作职责明细"><span class="nav-number">3.</span> <span class="nav-text">爬工作职责明细</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关联列表与工作职责"><span class="nav-number">4.</span> <span class="nav-text">关联列表与工作职责</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#备注"><span class="nav-number">5.</span> <span class="nav-text">备注</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#城市码"><span class="nav-number">5.1.</span> <span class="nav-text">城市码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">5.2.</span> <span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">IvyJin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>

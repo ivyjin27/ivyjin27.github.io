@@ -1,0 +1,2025 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="数据分析笔记">
+<meta property="og:url" content="http://yoursite.com/page/4/index.html">
+<meta property="og:site_name" content="数据分析笔记">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据分析笔记">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":0,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/page/4/"/>
+
+
+
+
+
+  <title>数据分析笔记</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">数据分析笔记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-table"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/03/Excel中Vlookup函数的应用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IvyJin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据分析笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/03/Excel中Vlookup函数的应用/" itemprop="url">Excel中Vlookup函数的应用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-03T22:00:11+08:00">
+                2018-06-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Excel/" itemprop="url" rel="index">
+                    <span itemprop="name">Excel</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="函数说明"><a href="#函数说明" class="headerlink" title="函数说明"></a>函数说明</h1><p>VLOOKUP(查询依据,查询范围,返回内容,匹配方式)</p>
+<p>举一个栗子，假设需要在几个会议室找到一个同事，而你只知道同事的姓名（假设没有重名情况），那么上述参数对应的内容便是</p>
+<blockquote>
+<p>查询依据，是指用于匹配的内容，这里是同事的姓名<br>查询范围，指在什么范围内查找，这里是所有办公室<br>返回内容，是指匹配完成后需要返回的列，为相对位置，这里返回这个同事所在的办公室<br>匹配方式，0为精确匹配，1为模糊匹配</p>
+</blockquote>
+<h1 id="基本应用举例"><a href="#基本应用举例" class="headerlink" title="基本应用举例"></a>基本应用举例</h1><p>假设sheet1中有学生名单</p>
+<table>
+<thead>
+<tr>
+<th>学号</th>
+<th>名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1201</td>
+<td>张三</td>
+</tr>
+<tr>
+<td>1202</td>
+<td>李四</td>
+</tr>
+<tr>
+<td>1203</td>
+<td>王五</td>
+</tr>
+<tr>
+<td>1204</td>
+<td>赵六</td>
+</tr>
+</tbody>
+</table>
+<p>sheet2中有学生成绩</p>
+<table>
+<thead>
+<tr>
+<th>学号</th>
+<th>成绩</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1201</td>
+<td>60</td>
+</tr>
+<tr>
+<td>1202</td>
+<td>70</td>
+</tr>
+<tr>
+<td>1203</td>
+<td>80</td>
+</tr>
+<tr>
+<td>1204</td>
+<td>90</td>
+</tr>
+</tbody>
+</table>
+<p>在sheet1中输入下面的内容就可以得到想要的结果<br>=VLOOKUP(K2,Sheet2!A:B,2,0)</p>
+<h1 id="模糊匹配和精确匹配"><a href="#模糊匹配和精确匹配" class="headerlink" title="模糊匹配和精确匹配"></a>模糊匹配和精确匹配</h1><p>精确匹配会返回完全匹配的结果<br>模糊匹配返回小于 lookup_value 的最大数值<br>这里用一个相亲的案例来说：</p>
+<p>男生名单在sheet1</p>
+<table>
+<thead>
+<tr>
+<th>年龄</th>
+<th>姓名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20</td>
+<td>张三</td>
+</tr>
+<tr>
+<td>25</td>
+<td>李四</td>
+</tr>
+<tr>
+<td>30</td>
+<td>王五</td>
+</tr>
+<tr>
+<td>38</td>
+<td>赵六</td>
+</tr>
+</tbody>
+</table>
+<p>女生名单在sheet2</p>
+<table>
+<thead>
+<tr>
+<th>年龄</th>
+<th>姓名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20</td>
+<td>翠花</td>
+</tr>
+<tr>
+<td>27</td>
+<td>小红</td>
+</tr>
+<tr>
+<td>30</td>
+<td>小李</td>
+</tr>
+</tbody>
+</table>
+<p>用精确匹配和模糊匹配得到的结果分别如下：</p>
+<table>
+<thead>
+<tr>
+<th>年龄</th>
+<th>姓名</th>
+<th>精确匹配</th>
+<th>模糊匹配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20</td>
+<td>张三</td>
+<td>翠花</td>
+<td>翠花</td>
+</tr>
+<tr>
+<td>25</td>
+<td>李四</td>
+<td>#N/A</td>
+<td>翠花</td>
+</tr>
+<tr>
+<td>30</td>
+<td>王五</td>
+<td>小李</td>
+<td>小李</td>
+</tr>
+<tr>
+<td>38</td>
+<td>赵六</td>
+<td>#N/A</td>
+<td>小李</td>
+</tr>
+</tbody>
+</table>
+<p>需要注意的是，如果查询的表按照顺序排列，返回的是小于 lookup_value 的最大数值，如果没有的话，结果就有点不可描述了~~</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/23/sql基础知识/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IvyJin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据分析笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/23/sql基础知识/" itemprop="url">sql基础知识</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-23T19:33:49+08:00">
+                2018-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/sql/" itemprop="url" rel="index">
+                    <span itemprop="name">sql</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="SQL定义"><a href="#SQL定义" class="headerlink" title="SQL定义"></a>SQL定义</h1><p>Structured Query Language：结构化查询语言<br>结构化理解：语法结构非常标准，各个关键字出现的位置顺序都是固定的，例如：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">  字段A,</span><br><span class="line">  字段B</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">  表A</span><br><span class="line"><span class="keyword">where</span></span><br><span class="line">  筛选条件</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> </span><br><span class="line">  聚合字段</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span></span><br><span class="line">  排序字段</span><br></pre></td></tr></table></figure></p>
+<h1 id="基本查询句型：select-…-from-…-where…"><a href="#基本查询句型：select-…-from-…-where…" class="headerlink" title="基本查询句型：select … from … where…"></a>基本查询句型：select … from … where…</h1><h2 id="句型说明"><a href="#句型说明" class="headerlink" title="句型说明"></a>句型说明</h2><p>取出 字段A，字段B，字段C<br>从<br>    表T<br>满足<br>    条件A and 条件B<br>划重点：这句话是SQL查询语句的源头、根本~</p>
+<h2 id="完整结构"><a href="#完整结构" class="headerlink" title="完整结构"></a>完整结构</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line"><span class="comment">-- 字段列举，如</span></span><br><span class="line">  字段A,</span><br><span class="line">  字段B </span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">  t1</span><br><span class="line"><span class="keyword">where</span> </span><br><span class="line"><span class="comment">-- 筛选条件，即目标数据集需符合的特征</span></span><br><span class="line">  t1.字段A&gt;=<span class="number">10</span></span><br></pre></td></tr></table></figure>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>现在有学生信息表，表名为student，表结构与数据示例如下：</p>
+<table>
+<thead>
+<tr>
+<th>uid</th>
+<th>nickname</th>
+<th>mobile</th>
+<th>create_time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>张三</td>
+<td>12345</td>
+<td>2018-09-01</td>
+</tr>
+<tr>
+<td>2</td>
+<td>李四</td>
+<td>12346</td>
+<td>2018-09-01</td>
+</tr>
+</tbody>
+</table>
+<p>问题1：已知主播ID为1，查询学生名称、报到时间<br>答案：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">  nickname,</span><br><span class="line">  create_time</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">  student  </span><br><span class="line"><span class="keyword">where</span></span><br><span class="line">  uid=<span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p>问题2.现在需要邀请2018-09-01报到的同学开会，应该怎么获取学生ID、名字、电话号码<br>答案<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">  uid,</span><br><span class="line">  nickname,</span><br><span class="line">  mobile</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">  t</span><br><span class="line"><span class="keyword">where</span> </span><br><span class="line">  create_time=<span class="string">'2018-09-01'</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="表连接句型：left-join…on…"><a href="#表连接句型：left-join…on…" class="headerlink" title="表连接句型：left join…on…"></a>表连接句型：left join…on…</h1><h2 id="句型说明-1"><a href="#句型说明-1" class="headerlink" title="句型说明"></a>句型说明</h2><p>取出 字段A，字段B，字段C<br>从 表T1<br>左联接 表T2<br>关联条件为 T1.a=T2.a<br>满足 条件A and 条件B</p>
+<h2 id="完整结构-1"><a href="#完整结构-1" class="headerlink" title="完整结构"></a>完整结构</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line"><span class="comment">-- 字段列举，可来源于表A和表B，需注明来源，如</span></span><br><span class="line">  t1.字段A,</span><br><span class="line">  t2.字段B </span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">  t1</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> </span><br><span class="line">  t2</span><br><span class="line"><span class="keyword">on</span> </span><br><span class="line"><span class="comment">-- 关联条件，即可以将两个表连在一起的字段</span></span><br><span class="line">  t1.字段A = t2.字段B</span><br><span class="line"><span class="keyword">where</span> </span><br><span class="line"><span class="comment">-- 筛选条件，即目标数据集需符合的特征</span></span><br><span class="line">  t1.字段A&gt;=<span class="number">10</span></span><br></pre></td></tr></table></figure>
+<h2 id="案例-1"><a href="#案例-1" class="headerlink" title="案例"></a>案例</h2><p>现有学生信息表student，和学生数学成绩表score，表结构如下<br>student</p>
+<table>
+<thead>
+<tr>
+<th>uid</th>
+<th>nickname</th>
+<th>mobile</th>
+<th>create_time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>张三</td>
+<td>12345</td>
+<td>2018-09-01</td>
+</tr>
+<tr>
+<td>2</td>
+<td>李四</td>
+<td>12346</td>
+<td>2018-09-01</td>
+</tr>
+</tbody>
+</table>
+<p>score</p>
+<table>
+<thead>
+<tr>
+<th>uid</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>90</td>
+</tr>
+<tr>
+<td>2</td>
+<td>89</td>
+</tr>
+</tbody>
+</table>
+<p>问题1：取出学生信息表中，每位同学的考试成绩<br>答案：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">  t1.uid,</span><br><span class="line">  t1.nickname,</span><br><span class="line">  t2.score</span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">  student t1</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> </span><br><span class="line">  score t2</span><br><span class="line"><span class="keyword">on</span> </span><br><span class="line">  t1.uid = t2.uid</span><br></pre></td></tr></table></figure></p>
+<p>问题2：这次考试非常重要，现在要对90分以上的学生发放奖励，取出这些学生的信息<br>答案<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">  t1.uid,</span><br><span class="line">  t1.nickname,</span><br><span class="line">  t2.score</span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">  student t1</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> </span><br><span class="line">  score t2</span><br><span class="line"><span class="keyword">on</span> </span><br><span class="line">  t1.uid = t2.uid</span><br><span class="line"> <span class="keyword">where</span> </span><br><span class="line">   t2.score&gt;=<span class="number">90</span></span><br></pre></td></tr></table></figure></p>
+<p>问题3：请按照分值倒序排列<br>排序用：order by 排序字段名 + desc/asc，其中desc是倒序,asc是正序，不填是正序排列<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">  t1.uid,</span><br><span class="line">  t1.nickname,</span><br><span class="line">  t2.score</span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">  student t1</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> </span><br><span class="line">  score t2</span><br><span class="line"><span class="keyword">on</span> </span><br><span class="line">  t1.uid = t2.uid</span><br><span class="line"><span class="keyword">where</span> </span><br><span class="line">   t2.score&gt;=<span class="number">90</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span></span><br><span class="line">  score <span class="keyword">desc</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="聚合句型：-group-by…having…"><a href="#聚合句型：-group-by…having…" class="headerlink" title="聚合句型： group by…having…"></a>聚合句型： group by…having…</h1><h2 id="常用聚合函数"><a href="#常用聚合函数" class="headerlink" title="常用聚合函数"></a>常用聚合函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>count()/count(distinct )</td>
+<td>计数/不重复计数</td>
+</tr>
+<tr>
+<td>sum()</td>
+<td>求和</td>
+</tr>
+<tr>
+<td>avg()</td>
+<td>求均值</td>
+</tr>
+<tr>
+<td>max()/min()</td>
+<td>求最大值/最小值</td>
+</tr>
+</tbody>
+</table>
+<h2 id="完整结构-2"><a href="#完整结构-2" class="headerlink" title="完整结构"></a>完整结构</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line"><span class="comment">-- 字段列举，可来源于表A和表B，需注明来源，如</span></span><br><span class="line">  字段A,</span><br><span class="line">  <span class="keyword">count</span>(字段B ) <span class="keyword">as</span> num_1,</span><br><span class="line">  <span class="keyword">count</span>(<span class="keyword">distinct</span> 字段B) <span class="keyword">as</span> num_2</span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">  t1</span><br><span class="line"><span class="keyword">where</span> </span><br><span class="line"><span class="comment">-- 筛选条件，即目标数据集需符合的特征</span></span><br><span class="line">  t1.字段A&gt;=<span class="number">10</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> </span><br><span class="line"><span class="comment">-- 聚合条件，类似Excel数据透视表中的行，需包括select中没有聚合的字段</span></span><br><span class="line">  字段A</span><br><span class="line"><span class="keyword">having</span></span><br><span class="line"><span class="comment">-- 聚合计算后的筛选条件</span></span><br><span class="line">  <span class="keyword">count</span>(字段B)&gt;=<span class="number">10</span></span><br></pre></td></tr></table></figure>
+<h2 id="案例-2"><a href="#案例-2" class="headerlink" title="案例"></a>案例</h2><p>现有学生信息表student，表结构如下：</p>
+<table>
+<thead>
+<tr>
+<th>uid</th>
+<th>nickname</th>
+<th>mobile</th>
+<th>create_time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>张三</td>
+<td>12345</td>
+<td>2018-09-01</td>
+</tr>
+<tr>
+<td>2</td>
+<td>李四</td>
+<td>12346</td>
+<td>2018-09-01</td>
+</tr>
+</tbody>
+</table>
+<p>问题1.计算2018-09-01报道的学生数<br>答案<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">  <span class="keyword">count</span>(<span class="keyword">distinct</span> uid) <span class="keyword">as</span> student_num</span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">  student</span><br><span class="line"><span class="keyword">where</span></span><br><span class="line">  create_time=<span class="string">'2018-09-01'</span></span><br></pre></td></tr></table></figure></p>
+<p>问题2.计算每天报道的学生数<br>答案<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">  create_time,</span><br><span class="line">  <span class="keyword">count</span>(<span class="keyword">distinct</span> uid) <span class="keyword">as</span> student_num</span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">  student</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span></span><br><span class="line">  create_time</span><br></pre></td></tr></table></figure></p>
+<p>问题3.请取出每天报道学生数超过10（包含）的日期，与报道学生数，并按照报道时间倒序排序<br>答案<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">  create_time,</span><br><span class="line">  <span class="keyword">count</span>(<span class="keyword">distinct</span> uid) <span class="keyword">as</span> student_num</span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">  student</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span></span><br><span class="line">  create_time</span><br><span class="line"><span class="keyword">having</span></span><br><span class="line">  <span class="keyword">count</span>(<span class="keyword">distinct</span> uid)&gt;=<span class="number">10</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span></span><br><span class="line">  create_time <span class="keyword">desc</span></span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/02/tableau表函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IvyJin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据分析笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/02/tableau表函数/" itemprop="url">Tableau表函数LOD</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-02T00:45:00+08:00">
+                2018-05-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tableau/" itemprop="url" rel="index">
+                    <span itemprop="name">tableau</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h1><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FIXED</td>
+<td>此表达式使用指定的维度计算值，而不引用视图中的任何其他维度</td>
+</tr>
+<tr>
+<td>INCLUDE</td>
+<td>此级别的详细信息表达式使用指定的维度以及视图中的任何维度来计算值</td>
+</tr>
+<tr>
+<td>EXCLUDE</td>
+<td>这些级别的细节表达式从视图细节级别中减去维度</td>
+</tr>
+</tbody>
+</table>
+<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><p>Q:筛选条件对fixed无效<br>A:点击筛选条件，选择应用于工作表就好啦~</p>
+<p><a href="https://www.w3cschool.cn/Tableau/tableau_lod_expressions.html" target="_blank" rel="noopener">参考资料</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/25/Excel单元格内容合并/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IvyJin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据分析笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/25/Excel单元格内容合并/" itemprop="url">Excel单元格内容合并</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-25T15:48:14+08:00">
+                2018-04-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Excel/" itemprop="url" rel="index">
+                    <span itemprop="name">Excel</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="将多单元格内容合并到一个单元格"><a href="#将多单元格内容合并到一个单元格" class="headerlink" title="将多单元格内容合并到一个单元格"></a>将多单元格内容合并到一个单元格</h1><h2 id="PHONETIC函数"><a href="#PHONETIC函数" class="headerlink" title="PHONETIC函数"></a>PHONETIC函数</h2><p>用法：在单元格输入=PHONETIC(合并范围即可)，例如<br><img src="/2018/04/25/Excel单元格内容合并/PHONETIC.png" alt="图示"></p>
+<h2 id="连字符-amp"><a href="#连字符-amp" class="headerlink" title="连字符&amp;"></a>连字符&amp;</h2><p>用法：通过连字符依次链接需要组合的单元格，例如<br><img src="/2018/04/25/Excel单元格内容合并/连字符.png" alt="连字符"></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://zhuanlan.zhihu.com/p/28195028" target="_blank" rel="noopener">单元格合并-知乎</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/20/tableau简单操作/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IvyJin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据分析笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/20/tableau简单操作/" itemprop="url">tableau小技巧</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-20T23:34:20+08:00">
+                2018-04-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tableau/" itemprop="url" rel="index">
+                    <span itemprop="name">tableau</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>用tableau做报表的时候，有学习到一些比较实用的功能/操作，特地整理记录下来</p>
+</blockquote>
+<h1 id="展示维度过多，字段自动合并的问题"><a href="#展示维度过多，字段自动合并的问题" class="headerlink" title="展示维度过多，字段自动合并的问题"></a>展示维度过多，字段自动合并的问题</h1><p>tableau做报表时，经常会遇到需要展示很多维度的列表，但是tableau默认只能展示六列，下面是解决维度过多导致排列拥挤的操作：</p>
+<div style="text-align: left;"><br>    <video controls="controls" src="/videos/overdim.mp4" style="width: 800px; height: 300px;"><br>    </video><br></div>
+
+<h1 id="维度值-筛选条件排序的问题-以上例，因为比较关注aa8-所以筛选条件中需要将aa8放在第一位"><a href="#维度值-筛选条件排序的问题-以上例，因为比较关注aa8-所以筛选条件中需要将aa8放在第一位" class="headerlink" title="维度值/筛选条件排序的问题,以上例，因为比较关注aa8,所以筛选条件中需要将aa8放在第一位"></a>维度值/筛选条件排序的问题,以上例，因为比较关注aa8,所以筛选条件中需要将aa8放在第一位</h1><div style="text-align: left;"><br>    <video controls="controls" src="/videos/filter_rank.mp4" style="width: 800px; height: 300px;"><br>    </video><br></div>
+
+
+<h1 id="实现筛选条件的联动"><a href="#实现筛选条件的联动" class="headerlink" title="实现筛选条件的联动"></a>实现筛选条件的联动</h1><p>应用场景：如需要有省市这种层级关系时，可以控制“市”为只展示相关值，即可实现先选特定省，然后在省份下面选择特定的市/地区<br>操作方法：将下级筛选条件选择仅显示相关值</p>
+<div style="text-align: left;"><br>    <video controls="controls" src="/videos/filter_control.mp4" style="width: 800px; height: 300px;"><br>    </video><br></div>
+
+<h1 id="在看板中插入链接"><a href="#在看板中插入链接" class="headerlink" title="在看板中插入链接"></a>在看板中插入链接</h1><p>在tableau中插入链接，有2种打开链接的方式：<br>在仪表板中不插入网页时，会在一个新的标签中打开网页<br>在仪表板中插入网页时，会仪表板中打开网页</p>
+<h2 id="插入一个固定链接"><a href="#插入一个固定链接" class="headerlink" title="插入一个固定链接"></a>插入一个固定链接</h2><p>操作路径：工作表 -&gt; 操作 -&gt; 添加操作 -&gt; 转到url -&gt; 运行操作点击<strong>选择</strong>按钮,URL中输入固定链接 -&gt; 确定</p>
+<h2 id="根据某个字段-ID插入自定义链接"><a href="#根据某个字段-ID插入自定义链接" class="headerlink" title="根据某个字段/ID插入自定义链接"></a>根据某个字段/ID插入自定义链接</h2><p>操作路径：工作表 -&gt; 操作 -&gt; 添加操作 -&gt; 转到url -&gt; 运行操作点击<strong>选择</strong>按钮,URL中输入自定义链接 -&gt; 确定<br>自定义链接可以是一个完成的链接字段，例如url是链接，即填写<url>；<br>也可以是一段固定的url+自定义ID字段，例如喜马拉雅主播m站主页，即为<a href="http://www.ximalaya.com/zhubo/" target="_blank" rel="noopener">www.ximalaya.com/zhubo/</a>&lt;anchor_id&gt; = 固定链接<a href="http://www.ximalaya.com/zhubo/" target="_blank" rel="noopener">www.ximalaya.com/zhubo/</a> + 自定义ID&lt;anchor_id&gt;</url></p>
+<h2 id="嵌入其他看板的链接"><a href="#嵌入其他看板的链接" class="headerlink" title="嵌入其他看板的链接"></a>嵌入其他看板的链接</h2><p>应用场景：<br>1.某一个看板数据源较多，需要拆分到多个看板提高加载速度时<br>2.某个看板有不同需求，需要放到多个路径下时<br>在网页端点击右上角分享，复制url，然后在本地仪表板中插入网页，把url粘贴进去即可</p>
+<h2 id="共用Tableau-Server数据源"><a href="#共用Tableau-Server数据源" class="headerlink" title="共用Tableau Server数据源"></a>共用Tableau Server数据源</h2><p>优点：数据源可能会被多个看板同时使用，使用Tableau Server可以减少数据源load的次数，减少服务器压力、<br>缺点：每次更新需要下载Tableau Server数据源修改，操作比较繁琐<br>操作：<br>1.上传数据源：需要共用的数据源在本地加载并处理好后，点击 服务器 -&gt; 发布数据源<br>2.使用数据源：在数据源部分，选择Tableau Server，使用第1步上传的数据源</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/05/python结巴分词/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IvyJin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据分析笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/05/python结巴分词/" itemprop="url">python结巴分词</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-05T17:11:03+08:00">
+                2018-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>“结巴”分词，据说是做得最好的中文分词组件，但是对我来说，目前是用过的唯一一个分词组件</p>
+</blockquote>
+<h1 id="支持模式"><a href="#支持模式" class="headerlink" title="支持模式"></a>支持模式</h1><p>结巴分词支持三种模式，包括：<br>精确模式，试图将句子最精确地切开，适合文本分析；<br>全模式，把句子中所有的可以成词的词语都扫描出来, 速度非常快，但是不能解决歧义；<br>搜索引擎模式，在精确模式的基础上，对长词再次切分，提高召回率，适合用于搜索引擎分词。</p>
+<h1 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h1><h2 id="分词"><a href="#分词" class="headerlink" title="分词"></a>分词</h2><h3 id="jieba-cut"><a href="#jieba-cut" class="headerlink" title="jieba.cut"></a>jieba.cut</h3><blockquote>
+<p>jieba.cut(sentence,cut_all=True,HMM)</p>
+<blockquote>
+<p>sentence：需要分词的字符串；<br>cut_all参数：用来控制是否采用全模式；<br>HMM参数：控制是否使用 HMM 模型<br>使用案例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 全模式</span></span><br><span class="line">seg_list = jieba.cut(<span class="string">"我来到北京清华大学"</span>, cut_all=<span class="keyword">True</span>)</span><br><span class="line">print(<span class="string">"Full Mode: "</span> + <span class="string">"/ "</span>.join(seg_list))  <span class="comment"># 全模式</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 精确模式</span></span><br><span class="line">seg_list = jieba.cut(<span class="string">"我来到北京清华大学"</span>, cut_all=<span class="keyword">False</span>)</span><br><span class="line">print(<span class="string">"Default Mode: "</span> + <span class="string">"/ "</span>.join(seg_list))  <span class="comment"># 精确模式</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>输出结果为：</p>
+<blockquote>
+<p>Full Mode: 我/ 来到/ 北京/ 清华/ 清华大学/ 华大/ 大学<br>Default Mode: 我/ 来到/ 北京/ 清华大学</p>
+</blockquote>
+</blockquote>
+<h3 id="jieba-cut-for-search"><a href="#jieba-cut-for-search" class="headerlink" title="jieba.cut_for_search"></a>jieba.cut_for_search</h3><blockquote>
+<p>jieba.cut_for_search(sentence,HMM)</p>
+<blockquote>
+<p>sentence：需要分词的字符串；<br>HMM参数：控制是否使用 HMM 模型<br>使用案例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">seg_list = jieba.cut_for_search(<span class="string">"小明硕士毕业于中国科学院计算所，后在日本京都大学深造"</span>)  <span class="comment"># 搜索引擎模式</span></span><br><span class="line">print(<span class="string">", "</span>.join(seg_list))</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>输出结果</p>
+<blockquote>
+<p>小明, 硕士, 毕业, 于, 中国, 科学, 学院, 科学院, 中国科学院, 计算, 计算所, ，, 后, 在, 日本, 京都, 大学, 日本京都大学, 深造</p>
+</blockquote>
+</blockquote>
+<p>jieba.cut 以及 jieba.cut_for_search 返回的结构都是一个可迭代的 generator，可以使用 for循环来获得分词后得到的每一个词语(unicode)，或者用<code>jieba.lcut</code>以及<code>jieba.lcut_for_search</code> 直接返回 list</p>
+<h3 id="jieba-Tokenizer-dictionary-DEFAULT-DICT"><a href="#jieba-Tokenizer-dictionary-DEFAULT-DICT" class="headerlink" title="jieba.Tokenizer(dictionary=DEFAULT_DICT)"></a>jieba.Tokenizer(dictionary=DEFAULT_DICT)</h3><p>新建自定义分词器，可用于同时使用不同词典。jieba.dt 为默认分词器，所有全局分词相关函数都是该分词器的映射。</p>
+<h2 id="添加自定义词典"><a href="#添加自定义词典" class="headerlink" title="添加自定义词典"></a>添加自定义词典</h2><h3 id="载入词典"><a href="#载入词典" class="headerlink" title="载入词典"></a>载入词典</h3><p>jieba.load_userdict(file_name)<br>词典格式和 dict.txt 一样，一个词占一行；<br>每一行分三部分：词语、词频（可省略）、词性（可省略），用空格隔开，顺序不可颠倒<br>例如</p>
+<blockquote>
+<p>创新办 3 i<br>云计算 5<br>凱特琳 nz<br>台中</p>
+</blockquote>
+<h3 id="调整词典"><a href="#调整词典" class="headerlink" title="调整词典"></a>调整词典</h3><p>add_word(word, freq=None, tag=None) 和 del_word(word) 可在程序中动态修改词典。<br>suggest_freq(segment, tune=True) 可调节单个词语的词频，使其能（或不能）被分出来</p>
+<h2 id="关键词提取"><a href="#关键词提取" class="headerlink" title="关键词提取"></a>关键词提取</h2><p>import jieba.analyse</p>
+<blockquote>
+<p>jieba.analyse.extract_tags(sentence, topK=20, withWeight=False, allowPOS=())</p>
+<blockquote>
+<p>sentence 为待提取的文本<br>topK 为返回几个 TF/IDF 权重最大的关键词，默认值为 20<br>withWeight 为是否一并返回关键词权重值，默认值为 False<br>allowPOS 仅包括指定词性的词，默认值为空，即不筛选<br>jieba.analyse.TFIDF(idf_path=None) 新建 TFIDF 实例，idf_path 为 IDF 频率文件</p>
+</blockquote>
+</blockquote>
+<h1 id="实战案例"><a href="#实战案例" class="headerlink" title="实战案例"></a>实战案例</h1><p>背景：想要通过用已有户评论，找到用户评论的高频词<br>假设数据为data，只有comment字段，按照下面的方法处理后，每个评论的分词结果为一行，用”,”隔开<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义标点符号</span></span><br><span class="line">punctuations = <span class="string">'''!()-[]&#123;&#125;;:'"\,&lt;&gt;./?@#$%^&amp;*_~【】\d《》（）??_！？“”。：；'''</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 分词</span></span><br><span class="line">comment_fenci = []</span><br><span class="line"><span class="keyword">for</span> comment <span class="keyword">in</span> data[<span class="string">'content'</span>]:</span><br><span class="line">    tmp = <span class="string">""</span></span><br><span class="line">    seg_list = <span class="string">", "</span>.join( jieba.cut(comment, cut_all=<span class="keyword">False</span>))</span><br><span class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> seg_list:</span><br><span class="line">        <span class="keyword">if</span> word <span class="keyword">not</span> <span class="keyword">in</span> punctuations:</span><br><span class="line">            tmp = tmp + word</span><br><span class="line">            tmp = tmp + <span class="string">","</span></span><br><span class="line">        comment_fenci.append(tmp)</span><br><span class="line"></span><br><span class="line">word = DataFrame(comment_fenci,columns=[<span class="string">'word'</span>])</span><br></pre></td></tr></table></figure></p>
+<h1 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h1><p>很久前做了标题用词频率分析，其中主要工作是对标题做分词处理，把代码贴出来供以后参考使用<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># coding:utf-8</span></span><br><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> print_function, unicode_literals</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> psycopg2</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment">#import re, string</span></span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line"><span class="keyword">import</span> jieba.analyse</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime,date,time,timedelta</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    reload(sys)</span><br><span class="line">    sys.setdefaultencoding(<span class="string">'utf-8'</span>)</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="keyword">import</span> codecs</span><br><span class="line"><span class="keyword">from</span> textrank4zh <span class="keyword">import</span> TextRank4Keyword</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_pg</span><span class="params">()</span>:</span></span><br><span class="line">       not_finish=<span class="keyword">True</span></span><br><span class="line">       <span class="keyword">while</span>(not_finish):</span><br><span class="line">          i = <span class="number">0</span></span><br><span class="line">          <span class="keyword">for</span> x <span class="keyword">in</span> values:</span><br><span class="line">             <span class="comment"># print("++ %s ++" % x)</span></span><br><span class="line">             <span class="comment"># cutword(''.join(list(x)))</span></span><br><span class="line">             i = i + <span class="number">1</span></span><br><span class="line">             cutword(i, x)</span><br><span class="line">          not_finish=<span class="keyword">False</span></span><br><span class="line">       conn.commit()</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cutword</span><span class="params">(rowIndex, row)</span>:</span></span><br><span class="line">       seg_list = list(jieba.cut(row[<span class="number">1</span>], cut_all=<span class="keyword">False</span>))</span><br><span class="line">      <span class="comment"># print("Divided: " + ",".join(seg_list)) </span></span><br><span class="line">       tmp =  <span class="string">""</span></span><br><span class="line">       <span class="keyword">for</span> word <span class="keyword">in</span> seg_list:</span><br><span class="line">        <span class="keyword">if</span> word <span class="keyword">not</span> <span class="keyword">in</span> punctuations:</span><br><span class="line">            tmp = tmp + word</span><br><span class="line">            tmp = tmp + <span class="string">","</span></span><br><span class="line">        <span class="comment">#print(tmp)</span></span><br><span class="line">       cur.execute(<span class="string">"insert into t (a, b, c, d) values (%s, %s, %s, %s)"</span>, (row[<span class="number">0</span>], row[<span class="number">1</span>], row[<span class="number">2</span>], tmp))</span><br><span class="line">       <span class="keyword">if</span> rowIndex % <span class="number">1000</span> == <span class="number">0</span>:</span><br><span class="line">         conn.commit()   </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">       conn=psycopg2.connect(database=<span class="string">""</span>, user=<span class="string">""</span>, password=<span class="string">""</span>, host=<span class="string">""</span>, port=<span class="string">""</span>)</span><br><span class="line">       <span class="comment"># 数据库连接的一些参数，需要根据实际情况修改</span></span><br><span class="line">       cur=conn.cursor()</span><br><span class="line">       cur.execute(<span class="string">"select a, b, c from t where c &gt;= 6"</span>)</span><br><span class="line">       values = cur.fetchall()</span><br><span class="line">       <span class="comment">#cur.execute("DELETE from jy.album_name_result")</span></span><br><span class="line">       jieba.enable_parallel(<span class="number">4</span>)</span><br><span class="line">       punctuations = <span class="string">'''!()-[]&#123;&#125;;:'"\,&lt;&gt;./?@#$%^&amp;*_~【】\d《》（）??_！？“”。：；'''</span></span><br><span class="line">       jieba.suggest_freq(<span class="string">'啊啊啊'</span>, <span class="keyword">True</span>)</span><br><span class="line">       test_pg()</span><br><span class="line">       conn.close()</span><br></pre></td></tr></table></figure></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://github.com/fxsjy/jieba" target="_blank" rel="noopener">jieba</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/26/SPSS连接spark/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IvyJin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据分析笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/26/SPSS连接spark/" itemprop="url">SPSS Modeler连接spark</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-26T11:57:18+08:00">
+                2018-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SPSS/" itemprop="url" rel="index">
+                    <span itemprop="name">SPSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-连接ODBC数据源"><a href="#1-连接ODBC数据源" class="headerlink" title="1.连接ODBC数据源"></a>1.连接ODBC数据源</h2><p>下载ODBC manager<br>打开后在系统DSN添加Simba Spark ODBC Driver<br>点击配置，增加HOST、PORT和DATABASE<br>其中HOST,DATABASE是字符串型，直接配置可能连不上,需要在 /Library/ODBC 的odbc.ini输入</p>
+<h2 id="2-在SPSS-Modeler中配置"><a href="#2-在SPSS-Modeler中配置" class="headerlink" title="2.在SPSS Modeler中配置"></a>2.在SPSS Modeler中配置</h2><p>双击SQL -&gt; SQL查询 -&gt; 数据源（添加新数据库连接） -&gt; 选择前面添加的数据源，录入用户名和密码 -&gt; 连接</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/22/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IvyJin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据分析笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/22/hello-world/" itemprop="url">Hello World</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-22T21:58:43+08:00">
+                2018-03-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="IvyJin" />
+            
+              <p class="site-author-name" itemprop="name">IvyJin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">IvyJin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>

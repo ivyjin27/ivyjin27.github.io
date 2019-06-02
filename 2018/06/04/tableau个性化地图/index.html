@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="个性化地图,数据可视化," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="个性化地图是指可以用自定义图片为背景，在图片上指定位置处标记数据。比如迪士尼APP里面的地图，就是个性化地图，在互联网公司可以用在标注产品各个位置的访问，可以非常直观的查看不同位置的点击，并据此调整产品、运营策略。  数据准备需要准备的数据包括2个：a.点标注的数据值表t1，见附录b.点的坐标位置表t2，见附录 背景图案例背景图在附录中可查看 看板操作step1:连接数据源，以t1为主表，左连接">
+<meta name="keywords" content="个性化地图,数据可视化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tableau个性化地图">
+<meta property="og:url" content="http://yoursite.com/2018/06/04/tableau个性化地图/index.html">
+<meta property="og:site_name" content="数据分析笔记">
+<meta property="og:description" content="个性化地图是指可以用自定义图片为背景，在图片上指定位置处标记数据。比如迪士尼APP里面的地图，就是个性化地图，在互联网公司可以用在标注产品各个位置的访问，可以非常直观的查看不同位置的点击，并据此调整产品、运营策略。  数据准备需要准备的数据包括2个：a.点标注的数据值表t1，见附录b.点的坐标位置表t2，见附录 背景图案例背景图在附录中可查看 看板操作step1:连接数据源，以t1为主表，左连接">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/06/04/tableau个性化地图/pages.jpeg">
+<meta property="og:image" content="http://yoursite.com/2018/06/04/tableau个性化地图/shape.jpeg">
+<meta property="og:image" content="http://yoursite.com/2018/06/04/tableau个性化地图/result.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/04/tableau个性化地图/backgroud.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/04/tableau个性化地图/zuobiao.png">
+<meta property="og:updated_time" content="2018-12-08T07:20:33.407Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="tableau个性化地图">
+<meta name="twitter:description" content="个性化地图是指可以用自定义图片为背景，在图片上指定位置处标记数据。比如迪士尼APP里面的地图，就是个性化地图，在互联网公司可以用在标注产品各个位置的访问，可以非常直观的查看不同位置的点击，并据此调整产品、运营策略。  数据准备需要准备的数据包括2个：a.点标注的数据值表t1，见附录b.点的坐标位置表t2，见附录 背景图案例背景图在附录中可查看 看板操作step1:连接数据源，以t1为主表，左连接">
+<meta name="twitter:image" content="http://yoursite.com/2018/06/04/tableau个性化地图/pages.jpeg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":0,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/04/tableau个性化地图/"/>
+
+
+
+
+
+  <title>tableau个性化地图 | 数据分析笔记</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">数据分析笔记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-table"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/04/tableau个性化地图/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IvyJin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据分析笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">tableau个性化地图</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-04T13:07:30+08:00">
+                2018-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tableau/" itemprop="url" rel="index">
+                    <span itemprop="name">tableau</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>个性化地图是指可以用自定义图片为背景，在图片上指定位置处标记数据。比如迪士尼APP里面的地图，就是个性化地图，在互联网公司可以用在标注产品各个位置的访问，可以非常直观的查看不同位置的点击，并据此调整产品、运营策略。</p>
+</blockquote>
+<h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><p>需要准备的数据包括2个：<br>a.点标注的数据值表t1，见附录<br>b.点的坐标位置表t2，见附录</p>
+<h1 id="背景图"><a href="#背景图" class="headerlink" title="背景图"></a>背景图</h1><p>案例背景图在附录中可查看</p>
+<h1 id="看板操作"><a href="#看板操作" class="headerlink" title="看板操作"></a>看板操作</h1><p>step1:连接数据源，以t1为主表，左连接t2<br>step2:把y拉行，x拉到列，度量值调为 「平均 」<br>step3:插入背景图片<br><img src="/2018/06/04/tableau个性化地图/pages.jpeg" alt="插入背景图片"><br>step4:插入形状，调整形状大小以及标签的对齐方式<br><img src="/2018/06/04/tableau个性化地图/shape.jpeg" alt="形状"></p>
+<p>PS.tableau里面是可以自定义形状的，可以把自定义形状放在tableau默认形状的路径下，在选择形状的时候点击 「重载形状」，就可以用刚刚放进去的形状了</p>
+<h1 id="最终效果图"><a href="#最终效果图" class="headerlink" title="最终效果图"></a>最终效果图</h1><p>按照上述操作后就可以获取得到个性化地图啦~<br><img src="/2018/06/04/tableau个性化地图/result.png" alt="最终效果图"></p>
+<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><h2 id="表t1"><a href="#表t1" class="headerlink" title="表t1"></a>表t1</h2><table>
+<thead>
+<tr>
+<th>button</th>
+<th>number</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>推荐</td>
+<td>77</td>
+</tr>
+<tr>
+<td>VIP</td>
+<td>22</td>
+</tr>
+<tr>
+<td>小说</td>
+<td>66</td>
+</tr>
+<tr>
+<td>直播</td>
+<td>99</td>
+</tr>
+<tr>
+<td>儿童</td>
+<td>11</td>
+</tr>
+<tr>
+<td>广播</td>
+<td>22</td>
+</tr>
+<tr>
+<td>焦点图</td>
+<td>99</td>
+</tr>
+<tr>
+<td>经典必听</td>
+<td>77</td>
+</tr>
+<tr>
+<td>每日必听</td>
+<td>33</td>
+</tr>
+<tr>
+<td>一键听</td>
+<td>22</td>
+</tr>
+<tr>
+<td>付费精品</td>
+<td>11</td>
+</tr>
+<tr>
+<td>听台州</td>
+<td>11</td>
+</tr>
+<tr>
+<td>猜你喜欢_更多</td>
+<td>55</td>
+</tr>
+<tr>
+<td>猜你喜欢_1</td>
+<td>88</td>
+</tr>
+<tr>
+<td>猜你喜欢_2</td>
+<td>77</td>
+</tr>
+<tr>
+<td>猜你喜欢_3</td>
+<td>66</td>
+</tr>
+<tr>
+<td>猜你喜欢_4</td>
+<td>55</td>
+</tr>
+<tr>
+<td>猜你喜欢_5</td>
+<td>44</td>
+</tr>
+<tr>
+<td>猜你喜欢_6</td>
+<td>33</td>
+</tr>
+<tr>
+<td>猜你喜欢_换一批</td>
+<td>44</td>
+</tr>
+<tr>
+<td>首页</td>
+<td>44</td>
+</tr>
+<tr>
+<td>我听</td>
+<td>88</td>
+</tr>
+<tr>
+<td>发现</td>
+<td>22</td>
+</tr>
+<tr>
+<td>我的</td>
+<td>33</td>
+</tr>
+</tbody>
+</table>
+<h2 id="表t2"><a href="#表t2" class="headerlink" title="表t2"></a>表t2</h2><table>
+<thead>
+<tr>
+<th>button</th>
+<th>x</th>
+<th>y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>推荐</td>
+<td>0.34</td>
+<td>7.3</td>
+</tr>
+<tr>
+<td>VIP</td>
+<td>0.9595</td>
+<td>7.3</td>
+</tr>
+<tr>
+<td>小说</td>
+<td>1.579</td>
+<td>7.3</td>
+</tr>
+<tr>
+<td>直播</td>
+<td>2.129</td>
+<td>7.3</td>
+</tr>
+<tr>
+<td>儿童</td>
+<td>2.692</td>
+<td>7.3</td>
+</tr>
+<tr>
+<td>广播</td>
+<td>3.3</td>
+<td>7.3</td>
+</tr>
+<tr>
+<td>焦点图</td>
+<td>0.894</td>
+<td>6.18</td>
+</tr>
+<tr>
+<td>经典必听</td>
+<td>0.379</td>
+<td>5.068</td>
+</tr>
+<tr>
+<td>每日必听</td>
+<td>1.196</td>
+<td>5.068</td>
+</tr>
+<tr>
+<td>一键听</td>
+<td>1.993</td>
+<td>5.068</td>
+</tr>
+<tr>
+<td>付费精品</td>
+<td>2.799</td>
+<td>5.068</td>
+</tr>
+<tr>
+<td>听台州</td>
+<td>3.596</td>
+<td>5.068</td>
+</tr>
+<tr>
+<td>猜你喜欢_更多</td>
+<td>3.559</td>
+<td>4.6</td>
+</tr>
+<tr>
+<td>猜你喜欢_1</td>
+<td>0.555</td>
+<td>3.765</td>
+</tr>
+<tr>
+<td>猜你喜欢_2</td>
+<td>1.851</td>
+<td>3.765</td>
+</tr>
+<tr>
+<td>猜你喜欢_3</td>
+<td>3.103</td>
+<td>3.765</td>
+</tr>
+<tr>
+<td>猜你喜欢_4</td>
+<td>0.555</td>
+<td>2.251</td>
+</tr>
+<tr>
+<td>猜你喜欢_5</td>
+<td>1.851</td>
+<td>2.251</td>
+</tr>
+<tr>
+<td>猜你喜欢_6</td>
+<td>3.103</td>
+<td>2.251</td>
+</tr>
+<tr>
+<td>猜你喜欢_换一批</td>
+<td>2.033</td>
+<td>1.228</td>
+</tr>
+<tr>
+<td>首页</td>
+<td>0.384</td>
+<td>0.495</td>
+</tr>
+<tr>
+<td>我听</td>
+<td>1.196</td>
+<td>0.495</td>
+</tr>
+<tr>
+<td>发现</td>
+<td>2.804</td>
+<td>0.495</td>
+</tr>
+<tr>
+<td>我的</td>
+<td>3.601</td>
+<td>0.495</td>
+</tr>
+</tbody>
+</table>
+<h2 id="背景图-1"><a href="#背景图-1" class="headerlink" title="背景图"></a>背景图</h2><p><img src="/2018/06/04/tableau个性化地图/backgroud.png" alt="图示"></p>
+<h2 id="获取坐标的方法"><a href="#获取坐标的方法" class="headerlink" title="获取坐标的方法"></a>获取坐标的方法</h2><p>导入背景图后，点击右键 -&gt; 添加注释 -&gt; 点，可通过移动点的位置获取各个待标注点的坐标<br><img src="/2018/06/04/tableau个性化地图/zuobiao.png" alt="坐标获取"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/个性化地图/" rel="tag"># 个性化地图</a>
+          
+            <a href="/tags/数据可视化/" rel="tag"># 数据可视化</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/03/Excel中Vlookup函数的应用/" rel="next" title="Excel中Vlookup函数的应用">
+                <i class="fa fa-chevron-left"></i> Excel中Vlookup函数的应用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/09/Tensorflow安装/" rel="prev" title="tensorflow安装">
+                tensorflow安装 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="IvyJin" />
+            
+              <p class="site-author-name" itemprop="name">IvyJin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据准备"><span class="nav-number">1.</span> <span class="nav-text">数据准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#背景图"><span class="nav-number">2.</span> <span class="nav-text">背景图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#看板操作"><span class="nav-number">3.</span> <span class="nav-text">看板操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最终效果图"><span class="nav-number">4.</span> <span class="nav-text">最终效果图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录"><span class="nav-number">5.</span> <span class="nav-text">附录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#表t1"><span class="nav-number">5.1.</span> <span class="nav-text">表t1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表t2"><span class="nav-number">5.2.</span> <span class="nav-text">表t2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#背景图-1"><span class="nav-number">5.3.</span> <span class="nav-text">背景图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取坐标的方法"><span class="nav-number">5.4.</span> <span class="nav-text">获取坐标的方法</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">IvyJin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>

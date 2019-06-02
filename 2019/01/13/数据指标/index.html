@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="AARRR,精益数据分析," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言：在经历大半年数据运营的工作后，回头看《精益数据分析》，感觉受益颇丰，思维又得到了提升。  数据的价值“人类提供灵感，机器负责验证”。数据不能够创造业务，但能为业务保驾护航：事前，验证是否存在“灵感”的先验条件事中，监测运营中业务的效果和存在的问题、找出可优化点事后，在特定阶段进行评估。这也是我目前所体会到的，数据化运营和数据产品的价值：掌握数据，可以更好的验证灵感。 什么是好的数据指标前提">
+<meta name="keywords" content="AARRR,精益数据分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据指标">
+<meta property="og:url" content="http://yoursite.com/2019/01/13/数据指标/index.html">
+<meta property="og:site_name" content="数据分析笔记">
+<meta property="og:description" content="前言：在经历大半年数据运营的工作后，回头看《精益数据分析》，感觉受益颇丰，思维又得到了提升。  数据的价值“人类提供灵感，机器负责验证”。数据不能够创造业务，但能为业务保驾护航：事前，验证是否存在“灵感”的先验条件事中，监测运营中业务的效果和存在的问题、找出可优化点事后，在特定阶段进行评估。这也是我目前所体会到的，数据化运营和数据产品的价值：掌握数据，可以更好的验证灵感。 什么是好的数据指标前提">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-13T11:21:28.264Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据指标">
+<meta name="twitter:description" content="前言：在经历大半年数据运营的工作后，回头看《精益数据分析》，感觉受益颇丰，思维又得到了提升。  数据的价值“人类提供灵感，机器负责验证”。数据不能够创造业务，但能为业务保驾护航：事前，验证是否存在“灵感”的先验条件事中，监测运营中业务的效果和存在的问题、找出可优化点事后，在特定阶段进行评估。这也是我目前所体会到的，数据化运营和数据产品的价值：掌握数据，可以更好的验证灵感。 什么是好的数据指标前提">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":0,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/01/13/数据指标/"/>
+
+
+
+
+
+  <title>数据指标 | 数据分析笔记</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">数据分析笔记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-table"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/13/数据指标/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IvyJin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据分析笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据指标</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-13T18:00:37+08:00">
+                2019-01-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据分析/" itemprop="url" rel="index">
+                    <span itemprop="name">数据分析</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>前言：在经历大半年数据运营的工作后，回头看《精益数据分析》，感觉受益颇丰，思维又得到了提升。</p>
+</blockquote>
+<h1 id="数据的价值"><a href="#数据的价值" class="headerlink" title="数据的价值"></a>数据的价值</h1><p>“人类提供灵感，机器负责验证”。数据不能够创造业务，但能为业务保驾护航：<br>事前，验证是否存在“灵感”的先验条件<br>事中，监测运营中业务的效果和存在的问题、找出可优化点<br>事后，在特定阶段进行评估。<br>这也是我目前所体会到的，数据化运营和数据产品的价值：掌握数据，可以更好的验证灵感。</p>
+<h1 id="什么是好的数据指标"><a href="#什么是好的数据指标" class="headerlink" title="什么是好的数据指标"></a>什么是好的数据指标</h1><h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>与商业模式紧密挂钩：营收来源、支出成本、客户数量和客户获取策略的效果</p>
+<h2 id="准则"><a href="#准则" class="headerlink" title="准则"></a>准则</h2><p>具有比较性，简单易懂，是一个比率，能够针对指标的变化改变行为。<br>寻找指标需走查：<br>a.定性指标和量化指标<br>b.虚荣指标和可付诸行动指标<br>c.探索性指标与报告性指标</p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>问题类型</th>
+<th>隐藏信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>我们知道我们知道的</td>
+<td>是可能并不为真的事实，须经数据检验</td>
+</tr>
+<tr>
+<td>我们知道我们不知道的</td>
+<td>是可通过调研解答的问题，可使之成为我们的行为基准，并流程化</td>
+</tr>
+<tr>
+<td>我们不知道我们知道的</td>
+<td>是直觉，需要评估并训练以提高其效能和效率</td>
+</tr>
+<tr>
+<td>我们不知道我们不知道的</td>
+<td>是探索，蕴含着我们自身独特的优势，能带来有趣的顿悟</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>史蒂夫.布兰克说：创业公司应该把时间花在探索并得出一个可拓展、可复制的商业模式上 </p>
+</blockquote>
+</blockquote>
+<p>d.先见性指标和后见性指标<br>e.相关性指标和因果性指标</p>
+<h1 id="测试方法"><a href="#测试方法" class="headerlink" title="测试方法"></a>测试方法</h1><p>市场细分、同期群分析、A/B测试和多变量分析</p>
+<h2 id="市场细分"><a href="#市场细分" class="headerlink" title="市场细分"></a>市场细分</h2><p>细分市场是一群拥有某种共同特征的人，例如手机APP市场中的客户端是来自安卓，还是IOS等</p>
+<h2 id="同期群分析"><a href="#同期群分析" class="headerlink" title="同期群分析"></a>同期群分析</h2><p>比较相似群体随时间的变化，例如知识付费领域经常关注不同阶段新增用户的ARPU值</p>
+<h2 id="A-B测试和多变量测试"><a href="#A-B测试和多变量测试" class="headerlink" title="A/B测试和多变量测试"></a>A/B测试和多变量测试</h2><p>在同一段时间段对不同被测试群体提供不同的体验。<br>其中A/B测试是每一时间段仅改变某一方面，衡量其效果和影响；多变量测试是同时改动多个方面，看哪个与结果相关性最大。</p>
+<h1 id="数据分析框架"><a href="#数据分析框架" class="headerlink" title="数据分析框架"></a>数据分析框架</h1><h2 id="AARRR"><a href="#AARRR" class="headerlink" title="AARRR"></a>AARRR</h2><p>戴夫.麦克卢尔的海盗指标说，也是目前互联网应用最为普遍的一套框架，描述了用户/客户/访客须经历的5个环节：<br>获取用户（Acquisition）、提高活跃度（Activation）、提高留存率（Retention）、获取营收（Revenue）和自传播（Referral）</p>
+<h2 id="创业增长金字塔"><a href="#创业增长金字塔" class="headerlink" title="创业增长金字塔"></a>创业增长金字塔</h2><p>肖恩.埃利斯的创业金字塔着眼于创业公司在找到产品与市场契合点之后，该如何增长。简单分为三个阶段：<br>产品与市场相契合（决定把什么卖给谁） -&gt; 厘清思路（找到可防御的高壁垒的竞争优势，并进一步巩固） -&gt; 规模增长</p>
+<h2 id="长漏斗"><a href="#长漏斗" class="headerlink" title="长漏斗"></a>长漏斗</h2><p>这属于一种常用的分析方法了，在产品优化中经常会用到，体现了从获取用户 -&gt; 用户发生期待行为的一个转化路径。</p>
+<h1 id="第一关键指标"><a href="#第一关键指标" class="headerlink" title="第一关键指标"></a>第一关键指标</h1><p>OMTM：One Metric That Matters，第一关键指标，指的是在当前阶段，需要集中全部注意力的数字。<br>使用第一关键指标的理由，与第一关键指标的特征有：<br>它回答了现阶段最重要的问题<br>它促使得出初始基线并建立清晰的目标<br>关注整个公司层面的健康<br>它鼓励一种实验文化<br>例如：餐饮业的前一天人工成本占收入的比例</p>
+<h1 id="数据分析误区"><a href="#数据分析误区" class="headerlink" title="数据分析误区"></a>数据分析误区</h1><p>假设数据没有噪声、忘记归一化、排除异常点、包括异常点、忽略季节性、抛开技术谈增长、数据呕吐、谎报军情的直播、“不是在这儿收集的”综合征（多尝试结合不同来源的数据进行分析）</p>
+<blockquote>
+<p>写在最后：数据在已知的产品迭代方面，能够检验效果、很快的发现问题并找到机会，可以把已有的业务做到极致。但是所有颠覆性的改变，都是源于人类的直觉、或者说灵感。即：”渐进式的改变可以达到局部极限，创新则可能导致全局洗牌”。</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/AARRR/" rel="tag"># AARRR</a>
+          
+            <a href="/tags/精益数据分析/" rel="tag"># 精益数据分析</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/25/sql行列转化-collect_set、collect_list、explode/" rel="next" title="sql行列转化-collect_set、collect_list、explode">
+                <i class="fa fa-chevron-left"></i> sql行列转化-collect_set、collect_list、explode
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/28/数据分析方法论总结/" rel="prev" title="数据分析方法论总结">
+                数据分析方法论总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="IvyJin" />
+            
+              <p class="site-author-name" itemprop="name">IvyJin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据的价值"><span class="nav-number">1.</span> <span class="nav-text">数据的价值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是好的数据指标"><span class="nav-number">2.</span> <span class="nav-text">什么是好的数据指标</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前提"><span class="nav-number">2.1.</span> <span class="nav-text">前提</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准则"><span class="nav-number">2.2.</span> <span class="nav-text">准则</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试方法"><span class="nav-number">3.</span> <span class="nav-text">测试方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#市场细分"><span class="nav-number">3.1.</span> <span class="nav-text">市场细分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同期群分析"><span class="nav-number">3.2.</span> <span class="nav-text">同期群分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-B测试和多变量测试"><span class="nav-number">3.3.</span> <span class="nav-text">A/B测试和多变量测试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据分析框架"><span class="nav-number">4.</span> <span class="nav-text">数据分析框架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AARRR"><span class="nav-number">4.1.</span> <span class="nav-text">AARRR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创业增长金字塔"><span class="nav-number">4.2.</span> <span class="nav-text">创业增长金字塔</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#长漏斗"><span class="nav-number">4.3.</span> <span class="nav-text">长漏斗</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第一关键指标"><span class="nav-number">5.</span> <span class="nav-text">第一关键指标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据分析误区"><span class="nav-number">6.</span> <span class="nav-text">数据分析误区</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">IvyJin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>

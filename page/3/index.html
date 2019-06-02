@@ -1,0 +1,2821 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="数据分析笔记">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+<meta property="og:site_name" content="数据分析笔记">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据分析笔记">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":0,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/page/3/"/>
+
+
+
+
+
+  <title>数据分析笔记</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">数据分析笔记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-table"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/16/python连接spark/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IvyJin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据分析笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/16/python连接spark/" itemprop="url">用python连接spark</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-16T00:20:38+08:00">
+                2018-10-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>倒腾了好久，终于实现用python连接spark了，为避免重复采坑，特别记录下</p>
+<h2 id="启动thriftserver"><a href="#启动thriftserver" class="headerlink" title="启动thriftserver"></a>启动thriftserver</h2><p>在启动之前，需要安装spark(这次安装的是spark-2.3.2-bin-hadoop2.7.tgz),yarn,nodejs,JDK<br><a href="https://www.apache.org/dyn/closer.lua/spark/spark-2.3.2/spark-2.3.2-bin-hadoop2.7.tgz" target="_blank" rel="noopener">spark下载地址</a><br><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html" target="_blank" rel="noopener">JDK下载地址</a><br>由于之前安装了nodejs，所以安装yarn的时候只执行了sudo npm install yarn -g</p>
+<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><p>切换到下载目录 -&gt; 执行【 tar -zxvf spark-2.3.2-bin-hadoop2.7.tgz 】 -&gt; 切换到$SPARK_HOME/sbin/ -&gt; 执行命令启动thriftserver<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./start-thriftserver.sh --master yarn --conf spark.driver.memory=3G --executor-memory 1G --num-executors 10</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装impyla"><a href="#安装impyla" class="headerlink" title="安装impyla"></a>安装impyla</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">pip install six</span><br><span class="line">pip install bit_array</span><br><span class="line">pip install thriftpy   </span><br><span class="line"><span class="comment">## thrift (on Python 2.x) or thriftpy (on Python 3.x)</span></span><br><span class="line">pip install thrift_sasl</span><br><span class="line">pip install sasl</span><br><span class="line">pip install impyla</span><br><span class="line"> </span><br><span class="line"><span class="comment">## 注意：还需要安装另外一个模块，官网上并没有给出（for python3）：</span></span><br><span class="line">pip install git+https://github.com/laserson/python-sasl.git@cython</span><br></pre></td></tr></table></figure>
+<h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> impala.dbapi <span class="keyword">import</span> connect</span><br><span class="line">conn = connect(host=<span class="string">''</span>, port=, user=<span class="string">''</span>, password=<span class="string">''</span>, database=<span class="string">''</span>, auth_mechanism=<span class="string">'PLAIN'</span>)</span><br><span class="line">cursor = conn.cursor()</span><br><span class="line">cursor.execute(<span class="string">'SELECT * FROM t LIMIT 100'</span>)</span><br><span class="line">print(cursor.description)  <span class="comment"># prints the result set's schema</span></span><br><span class="line">results = cursor.fetchall()</span><br><span class="line">print(results)</span><br></pre></td></tr></table></figure>
+<h2 id="将读取结果转化为DataFrame"><a href="#将读取结果转化为DataFrame" class="headerlink" title="将读取结果转化为DataFrame"></a>将读取结果转化为DataFrame</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 取出列名</span></span><br><span class="line">name = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(np.array(cursor.description))):</span><br><span class="line">    x = np.array(cursor.description)[i,<span class="number">0</span>]</span><br><span class="line">    name.append(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 转化为DataFrame</span></span><br><span class="line">data = DataFrame(results,columns=name)</span><br><span class="line">data.describe() <span class="comment"># 查看数据概览</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/09/KNN/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IvyJin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据分析笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/09/KNN/" itemprop="url">KNN</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-09T23:47:53+08:00">
+                2018-10-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="K近邻算法"><a href="#K近邻算法" class="headerlink" title="K近邻算法"></a>K近邻算法</h1><h2 id="KNN思路"><a href="#KNN思路" class="headerlink" title="KNN思路"></a>KNN思路</h2><p>如果一个样本在特征空间中的k个最相似(即特征空间中最邻近)的样本中的大多数属于某一个类别，则该样本也属于这个类别。<br>假设raw_data_X是根据肿瘤的长和宽<br>raw_data_y是肿瘤的分类，其中0是良性，1是恶性<br>模拟数据<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">raw_data_X =[[<span class="number">3.3935</span>,<span class="number">2.3312</span>],</span><br><span class="line">            [<span class="number">3.1101</span>,<span class="number">1.7815</span>],</span><br><span class="line">            [<span class="number">1.3438</span>,<span class="number">3.3684</span>],</span><br><span class="line">            [<span class="number">3.5823</span>,<span class="number">4.6792</span>],</span><br><span class="line">            [<span class="number">2.2804</span>,<span class="number">2.8670</span>],</span><br><span class="line">            [<span class="number">7.4234</span>,<span class="number">4.6965</span>],</span><br><span class="line">            [<span class="number">5.7450</span>,<span class="number">3.5340</span>],</span><br><span class="line">            [<span class="number">9.1722</span>,<span class="number">2.5111</span>],</span><br><span class="line">            [<span class="number">7.7928</span>,<span class="number">3.4241</span>],</span><br><span class="line">            [<span class="number">7.9398</span>,<span class="number">0.7916</span>]]</span><br><span class="line">raw_data_y = [<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>]</span><br><span class="line">X_train = np.array(raw_data_X)</span><br><span class="line">y_train = np.array(raw_data_y)</span><br></pre></td></tr></table></figure></p>
+<p>查看训练数据的分布情况<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plt.scatter(X_train[y_train==<span class="number">0</span>,<span class="number">0</span>],X_train[y_train==<span class="number">0</span>,<span class="number">1</span>],color=<span class="string">'g'</span>)</span><br><span class="line">plt.scatter(X_train[y_train==<span class="number">1</span>,<span class="number">0</span>],X_train[y_train==<span class="number">1</span>,<span class="number">1</span>],color=<span class="string">'r'</span>)</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/10/09/KNN/demo_1.png" alt="demo_1"></p>
+<p>现在增加了一个点，查看在样本数据中的分布情况<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plt.scatter(X_train[y_train==<span class="number">0</span>,<span class="number">0</span>],X_train[y_train==<span class="number">0</span>,<span class="number">1</span>],color=<span class="string">'g'</span>)</span><br><span class="line">plt.scatter(X_train[y_train==<span class="number">1</span>,<span class="number">0</span>],X_train[y_train==<span class="number">1</span>,<span class="number">1</span>],color=<span class="string">'r'</span>)</span><br><span class="line">plt.scatter(x[<span class="number">0</span>],x[<span class="number">1</span>],color=<span class="string">'b'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>可以看到，周围点的分类都为1，则这个样例的分类也为1<br><img src="/2018/10/09/KNN/demo_2.png" alt="demo_2"></p>
+<h2 id="KNN过程"><a href="#KNN过程" class="headerlink" title="KNN过程"></a>KNN过程</h2><p>计算两个点的距离：欧拉距离<br>平面距离 = sqrt((X<sup>(a)</sup> - X<sup>(b)</sup>)<sup>2</sup> + (y<sup>(a)</sup> - y<sup>(b)</sup>)<sup>2</sup>)<br>立体距离 = sqrt((X<sup>(a)</sup> - X<sup>(b)</sup>)<sup>2</sup> + (y<sup>(a)</sup> - y<sup>(b)</sup>)<sup>2</sup> + (z<sup>(a)</sup> - z<sup>(b)</sup>)<sup>2</sup>)<br>特征向量 = sqrt((X<sub>1</sub><sup>(a)</sup> - X<sub>2</sub><sup>(b)</sup>)<sup>2</sup> + (X<sub>2</sub><sup>(a)</sup> - X<sub>2</sub><sup>(b)</sup>)<sup>2</sup> + …… + (X<sub>3</sub><sup>(a)</sup> - X<sub>3</sub><sup>(b)</sup>)<sup>2</sup>)</p>
+<p>python代码为<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"><span class="comment"># 方法1：for循环</span></span><br><span class="line">distances = []</span><br><span class="line"><span class="keyword">for</span> x_train <span class="keyword">in</span> X_train:</span><br><span class="line">    d = sqrt(np.sum(x_train-x)**<span class="number">2</span>)</span><br><span class="line">    distances.append(d)</span><br><span class="line"><span class="comment"># 方法2：</span></span><br><span class="line">distances = [sqrt(np.sum((x_train-x)**<span class="number">2</span>)) <span class="keyword">for</span> x_train <span class="keyword">in</span> X_train]</span><br></pre></td></tr></table></figure></p>
+<p>找出距离最近点的分类</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">nearest = np.argsort(distances)</span><br><span class="line">k = <span class="number">6</span> </span><br><span class="line">topK_y = [y_train[i] <span class="keyword">for</span> i <span class="keyword">in</span> nearest[:k]]</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line">votes = Counter(topK_y)</span><br><span class="line"><span class="comment"># 输出数量最多的分类</span></span><br><span class="line">votes.most_common(<span class="number">1</span>)[<span class="number">0</span>][<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<h1 id="sklearn中的应用"><a href="#sklearn中的应用" class="headerlink" title="sklearn中的应用"></a>sklearn中的应用</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入包</span></span><br><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsClassifier</span><br><span class="line"><span class="comment"># 传入n_neighbors参数</span></span><br><span class="line">KNN_classifier = KNeighborsClassifier(n_neighbors=<span class="number">6</span>)</span><br><span class="line"><span class="comment"># 模型训练</span></span><br><span class="line">KNN_classifier.fit(X_train,y_train)</span><br><span class="line"><span class="comment"># 预测</span></span><br><span class="line">X_predict = x.reshape(<span class="number">1</span>,<span class="number">-1</span>)</span><br><span class="line">KNN_classifier.predict(X_predict)</span><br></pre></td></tr></table></figure>
+<h1 id="sklearn中KNN算法封装"><a href="#sklearn中KNN算法封装" class="headerlink" title="sklearn中KNN算法封装"></a>sklearn中KNN算法封装</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span><br><span class="line"><span class="keyword">import</span> math <span class="keyword">as</span> sqrt</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">kNNClassifier</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,k)</span>:</span></span><br><span class="line">        <span class="keyword">assert</span> k&gt;=<span class="number">1</span>,<span class="string">"k must be valid"</span></span><br><span class="line">        self.k = k</span><br><span class="line">        self._X_train = <span class="keyword">None</span></span><br><span class="line">        self._y_train = <span class="keyword">None</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">fit</span><span class="params">(self,X_train,y_train)</span>:</span></span><br><span class="line">        <span class="keyword">assert</span> X_train.shape[<span class="number">0</span>] == y_train.shape[<span class="number">0</span>],\</span><br><span class="line">            <span class="string">"the size of X_train must be equal to the size or y_train"</span></span><br><span class="line">        <span class="keyword">assert</span> self.k &lt;= X_train.shape[<span class="number">0</span>],\</span><br><span class="line">            <span class="string">"the size of X_train must be at least k"</span></span><br><span class="line">        self._X_train = X_train</span><br><span class="line">        self._y_train = y_train</span><br><span class="line">        <span class="keyword">return</span> self</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">predict</span><span class="params">(self,X_predict)</span>:</span></span><br><span class="line">        <span class="keyword">assert</span> self._X_train <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span> <span class="keyword">and</span> self._y_train <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>,\</span><br><span class="line">            <span class="string">"must fit before predict!"</span></span><br><span class="line">        <span class="keyword">assert</span> X_predict.shape[<span class="number">1</span>] == self._X_train.shape[<span class="number">1</span>],\</span><br><span class="line">            <span class="string">"the feature number of X_predict must be equal to X_train"</span></span><br><span class="line">        y_predict = [self._predict(x) <span class="keyword">for</span> x <span class="keyword">in</span> X_predict]</span><br><span class="line">        <span class="keyword">return</span> np.array(y_predict)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_predict</span><span class="params">(self,x)</span>:</span></span><br><span class="line">        <span class="keyword">assert</span> x.shape[<span class="number">0</span>] == self._X_train.shape[<span class="number">1</span>],\</span><br><span class="line">            <span class="string">"the feature number of x must be equal to X_train"</span></span><br><span class="line">        distances = [sqrt(np.sum((x_train -x ) ** <span class="number">2</span>))</span><br><span class="line">                     <span class="keyword">for</span> x_train <span class="keyword">in</span> self._X_train]</span><br><span class="line">        nearest = np.argsort(distances)</span><br><span class="line">        </span><br><span class="line">        topK_Y = [self._y_train[i] <span class="keyword">for</span> i <span class="keyword">in</span> nearest[:self.k]]</span><br><span class="line">        votes = Counter(topK_y)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> votes.most_common(<span class="number">1</span>)[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"KNN(k=%d)"</span> % self.k</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/12/sql行列转化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IvyJin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据分析笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/12/sql行列转化/" itemprop="url">sql行列转化</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-12T20:19:17+08:00">
+                2018-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/sql/" itemprop="url" rel="index">
+                    <span itemprop="name">sql</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="列转行-函数max结合case-when"><a href="#列转行-函数max结合case-when" class="headerlink" title="列转行:函数max结合case when"></a>列转行:函数max结合case when</h1><h2 id="假设有表t，表示学生各科的成绩表"><a href="#假设有表t，表示学生各科的成绩表" class="headerlink" title="假设有表t，表示学生各科的成绩表"></a>假设有表t，表示学生各科的成绩表</h2><table>
+<thead>
+<tr>
+<th>name</th>
+<th>course</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>张三</td>
+<td>语文</td>
+<td>80</td>
+</tr>
+<tr>
+<td>张三</td>
+<td>数学</td>
+<td>90</td>
+</tr>
+<tr>
+<td>张三</td>
+<td>英语</td>
+<td>70</td>
+</tr>
+<tr>
+<td>张三</td>
+<td>历史</td>
+<td>78</td>
+</tr>
+</tbody>
+</table>
+<h2 id="一行展示学生信息"><a href="#一行展示学生信息" class="headerlink" title="一行展示学生信息"></a>一行展示学生信息</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> </span><br><span class="line">	<span class="keyword">name</span>,</span><br><span class="line">	<span class="keyword">max</span>(<span class="keyword">case</span> <span class="keyword">when</span> course=<span class="string">'语文'</span> <span class="keyword">then</span> score <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> score_yw,</span><br><span class="line">	<span class="keyword">max</span>(<span class="keyword">case</span> <span class="keyword">when</span> course=<span class="string">'数学'</span> <span class="keyword">then</span> score <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> score_sx,</span><br><span class="line">	<span class="keyword">max</span>(<span class="keyword">case</span> <span class="keyword">when</span> course=<span class="string">'英语'</span> <span class="keyword">then</span> score <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> score_eng,</span><br><span class="line">	<span class="keyword">max</span>(<span class="keyword">case</span> <span class="keyword">when</span> course=<span class="string">'历史'</span> <span class="keyword">then</span> score <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> score_ls</span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">	t </span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> </span><br><span class="line">	<span class="keyword">name</span></span><br></pre></td></tr></table></figure>
+<p>输出结果为</p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>score_yw</th>
+<th>score_sx</th>
+<th>score_eng</th>
+<th>score_ls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>张三</td>
+<td>80</td>
+<td>90</td>
+<td>70</td>
+<td>78</td>
+</tr>
+</tbody>
+</table>
+<h1 id="用union将上述输出结果还原"><a href="#用union将上述输出结果还原" class="headerlink" title="用union将上述输出结果还原"></a>用union将上述输出结果还原</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> </span><br><span class="line">	<span class="keyword">name</span>,</span><br><span class="line">	<span class="string">'语文'</span> <span class="keyword">as</span> corse,</span><br><span class="line">	score_yw <span class="keyword">as</span> score</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	t </span><br><span class="line"><span class="keyword">union</span> all</span><br><span class="line"><span class="keyword">select</span> </span><br><span class="line">	<span class="keyword">name</span>,</span><br><span class="line">	<span class="string">'数学'</span> <span class="keyword">as</span> corse,</span><br><span class="line">	score_sx <span class="keyword">as</span> score</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	t </span><br><span class="line"><span class="keyword">union</span> all</span><br><span class="line"><span class="keyword">select</span> </span><br><span class="line">	<span class="keyword">name</span>,</span><br><span class="line">	<span class="string">'英语'</span> <span class="keyword">as</span> corse,</span><br><span class="line">	score_eng <span class="keyword">as</span> score</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	t </span><br><span class="line"><span class="keyword">union</span> all </span><br><span class="line"><span class="keyword">select</span> </span><br><span class="line">	<span class="keyword">name</span>,</span><br><span class="line">	<span class="string">'历史'</span> <span class="keyword">as</span> corse,</span><br><span class="line">	score_ls d <span class="keyword">as</span> score</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	t</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/sql留存写法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IvyJin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据分析笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/16/sql留存写法/" itemprop="url">sql留存写法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T17:09:27+08:00">
+                2018-08-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/sql/" itemprop="url" rel="index">
+                    <span itemprop="name">sql</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>用户在某段时间内开始使用应用，经过一段时间后，仍然继续使用该应用的用户，被认作是留存用户。<br>留存率=新增用户中登录用户数/新增用户数 * 100%（一般统计周期为天）</p>
+</blockquote>
+<p>假设某APP的用户活跃表为t，结构如下</p>
+<table>
+<thead>
+<tr>
+<th>dt</th>
+<th>deviceid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20181128</td>
+<td>aaa</td>
+</tr>
+<tr>
+<td>20181127</td>
+<td>aaa</td>
+</tr>
+<tr>
+<td>20181125</td>
+<td>bbb</td>
+</tr>
+</tbody>
+</table>
+<p>那么次日留存写法（假设已经按日去重）为：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">with a as</span><br><span class="line">(<span class="keyword">select</span></span><br><span class="line">	deviceid，</span><br><span class="line">	<span class="keyword">min</span>(<span class="keyword">concat</span>(<span class="keyword">substr</span>(dt,<span class="number">1</span>,<span class="number">4</span>),<span class="string">"-"</span>,<span class="keyword">substr</span>(dt,<span class="number">5</span>,<span class="number">2</span>),<span class="string">"-"</span>,<span class="keyword">substr</span>(dt,<span class="number">7</span>,<span class="number">2</span>))) <span class="keyword">as</span> <span class="built_in">date</span></span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">	t </span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> </span><br><span class="line">	deviceid，</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> </span><br><span class="line">	a.date,</span><br><span class="line">	<span class="keyword">count</span>(<span class="keyword">distinct</span> a.deviceid) <span class="keyword">as</span> increase_num,</span><br><span class="line">	<span class="keyword">count</span>(<span class="keyword">distinct</span> b.deviceid) <span class="keyword">as</span> retained_num,</span><br><span class="line">	<span class="keyword">count</span>(<span class="keyword">distinct</span> b.deviceid)/<span class="keyword">count</span>(<span class="keyword">distinct</span> a.deviceid) <span class="keyword">as</span> retained_rate</span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">	a </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> </span><br><span class="line">	t </span><br><span class="line"><span class="keyword">on</span> </span><br><span class="line">	a.deviceid = t.deviceid</span><br><span class="line">	<span class="keyword">and</span> t.dt = regexp_replace(<span class="keyword">date_add</span>(a.date,<span class="number">1</span>),<span class="string">"-"</span>,<span class="string">""</span>)</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> </span><br><span class="line">	a.date </span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> </span><br><span class="line">	<span class="built_in">date</span> <span class="keyword">desc</span></span><br></pre></td></tr></table></figure></p>
+<p>取20天内每天的留存<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">with a as</span><br><span class="line">(<span class="keyword">select</span></span><br><span class="line">	deviceid，</span><br><span class="line">	<span class="keyword">min</span>(<span class="keyword">concat</span>(<span class="keyword">substr</span>(dt,<span class="number">1</span>,<span class="number">4</span>),<span class="string">"-"</span>,<span class="keyword">substr</span>(dt,<span class="number">5</span>,<span class="number">2</span>),<span class="string">"-"</span>,<span class="keyword">substr</span>(dt,<span class="number">7</span>,<span class="number">2</span>))) <span class="keyword">as</span> <span class="built_in">date</span></span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">	t </span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> </span><br><span class="line">	deviceid，</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> </span><br><span class="line">	a.date,</span><br><span class="line">	<span class="keyword">datediff</span>(<span class="keyword">concat</span>(<span class="keyword">substr</span>(t.dt,<span class="number">1</span>,<span class="number">4</span>),<span class="string">"-"</span>,<span class="keyword">substr</span>(t.dt,<span class="number">5</span>,<span class="number">2</span>),<span class="string">"-"</span>,<span class="keyword">substr</span>(t.dt,<span class="number">7</span>,<span class="number">2</span>)),a.date) <span class="keyword">as</span> dim,</span><br><span class="line">	<span class="keyword">count</span>(<span class="keyword">distinct</span> a.deviceid) <span class="keyword">as</span> increase_num,</span><br><span class="line">	<span class="keyword">count</span>(<span class="keyword">distinct</span> b.deviceid) <span class="keyword">as</span> retained_num,</span><br><span class="line">	<span class="keyword">count</span>(<span class="keyword">distinct</span> b.deviceid)/<span class="keyword">count</span>(<span class="keyword">distinct</span> a.deviceid) <span class="keyword">as</span> retained_rate</span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">	a </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> </span><br><span class="line">	t </span><br><span class="line"><span class="keyword">on</span> </span><br><span class="line">	a.deviceid = t.deviceid</span><br><span class="line">	<span class="keyword">and</span> t.dt &lt;= regexp_replace(<span class="keyword">date_add</span>(a.date,<span class="number">20</span>),<span class="string">"-"</span>,<span class="string">""</span>)</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> </span><br><span class="line">	a.date,</span><br><span class="line">	<span class="keyword">datediff</span>(<span class="keyword">concat</span>(<span class="keyword">substr</span>(t.dt,<span class="number">1</span>,<span class="number">4</span>),<span class="string">"-"</span>,<span class="keyword">substr</span>(t.dt,<span class="number">5</span>,<span class="number">2</span>),<span class="string">"-"</span>,<span class="keyword">substr</span>(t.dt,<span class="number">7</span>,<span class="number">2</span>)),a.date)</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> </span><br><span class="line">	<span class="built_in">date</span> <span class="keyword">desc</span></span><br></pre></td></tr></table></figure></p>
+<p>次周、次月留存写法可依此类推</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/26/sql字符串处理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IvyJin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据分析笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/26/sql字符串处理/" itemprop="url">sql字符串处理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-26T00:20:20+08:00">
+                2018-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/sql/" itemprop="url" rel="index">
+                    <span itemprop="name">sql</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <!-- 
+| 用途 | 函数/方法 | demo |
+| --- | --- | --- |
+| 判断字符包含关系 | instr | instr('abc','a,b') |
+| 判断字符包含关系 | find_in_set | find_in_set('abc','a') != 0 |
+| 把字段拆为三部分，最后取中间 | regexp_extract | regexp_extract('"banner"]','(\\[?\\")(.*?)(\\"\\]?)',2) |
+| 替换多个 | regexp_extract | select regexp_extract('["banner"]','(\\[?\\")(.*?)(\\"\\])',2) |
+| 从url中取部分字段 | parse_url | parse_url(props['page_url'],'QUERY', 'id') |
+| ip转地址 | ip2code | substr(ip2code(props['x-clientIp'],0),3,4) |
+| 分号转义符 | \073 | split(info,"\073")[2] | -->
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>语法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>字符串长度函数</td>
+<td>length(string A)</td>
+</tr>
+<tr>
+<td>字符串反转函数</td>
+<td>reverse(string A)</td>
+</tr>
+<tr>
+<td>字符串连接函数</td>
+<td>concat(string A, string B…)</td>
+</tr>
+<tr>
+<td>带分隔符字符串连接函数</td>
+<td>concat_ws(string SEP, string A, string B…)</td>
+</tr>
+<tr>
+<td>字符串截取函数</td>
+<td>substr(string A, int start),substring(string A, int start)</td>
+</tr>
+<tr>
+<td>字符串截取函数</td>
+<td>substr(string A, int start, int len),substring(string A, intstart, int len)</td>
+</tr>
+<tr>
+<td>字符串转大写函数</td>
+<td>upper(string A) ,ucase(string A)</td>
+</tr>
+<tr>
+<td>字符串转小写函数</td>
+<td>lower(string A), lcase(string A)    </td>
+</tr>
+<tr>
+<td>去空格函数</td>
+<td>trim(string A)</td>
+</tr>
+<tr>
+<td>左边/右边去空格函数</td>
+<td>ltrim(string A)/rtrim(string A)</td>
+</tr>
+<tr>
+<td>URL解析函数</td>
+<td>parse_url(string urlString, string partToExtract [, stringkeyToExtract])</td>
+</tr>
+<tr>
+<td>json解析函数</td>
+<td>get_json_object(string json_string, string path)</td>
+</tr>
+<tr>
+<td>空格字符串函数</td>
+<td>space(int n)</td>
+</tr>
+<tr>
+<td>重复字符串函数</td>
+<td>repeat(string str, int n)</td>
+</tr>
+<tr>
+<td>首字符ascii函数</td>
+<td>ascii(string str)</td>
+</tr>
+<tr>
+<td>左/右补足函数</td>
+<td>lpad(string str, int len, string pad), rpad(string str, int len, string pad)</td>
+</tr>
+<tr>
+<td>分割字符串函数</td>
+<td>split(string str, stringpat)</td>
+</tr>
+<tr>
+<td>集合查找函数</td>
+<td>find_in_set(string str, string strList)</td>
+</tr>
+<tr>
+<td>类型转换函数</td>
+<td>cast(expr as <type>)</type></td>
+</tr>
+<tr>
+<td>正则表达式解析函数</td>
+<td>regexp_extract(string subject, string pattern, int index)</td>
+</tr>
+</tbody>
+</table>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/28/sql开窗函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IvyJin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据分析笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/28/sql开窗函数/" itemprop="url">sql开窗函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-28T00:19:40+08:00">
+                2018-06-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/sql/" itemprop="url" rel="index">
+                    <span itemprop="name">sql</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="计算一段时间内的累计值"><a href="#计算一段时间内的累计值" class="headerlink" title="计算一段时间内的累计值"></a>计算一段时间内的累计值</h1><h2 id="假设有表格t，数据表示每天各类商品的销量"><a href="#假设有表格t，数据表示每天各类商品的销量" class="headerlink" title="假设有表格t，数据表示每天各类商品的销量"></a>假设有表格t，数据表示每天各类商品的销量</h2><table>
+<thead>
+<tr>
+<th>date</th>
+<th>category</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20181012</td>
+<td>a</td>
+<td>100</td>
+</tr>
+<tr>
+<td>20181013</td>
+<td>a</td>
+<td>200</td>
+</tr>
+<tr>
+<td>20181012</td>
+<td>b</td>
+<td>300</td>
+</tr>
+<tr>
+<td>20181012</td>
+<td>b</td>
+<td>200</td>
+</tr>
+</tbody>
+</table>
+<h2 id="取数代码"><a href="#取数代码" class="headerlink" title="取数代码"></a>取数代码</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">    <span class="built_in">date</span>,</span><br><span class="line">    <span class="keyword">category</span>,</span><br><span class="line">    <span class="keyword">sum</span>(<span class="keyword">coalesce</span>(<span class="keyword">value</span>,<span class="number">0</span>)) <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> <span class="keyword">category</span> <span class="keyword">order</span> <span class="keyword">by</span> <span class="built_in">date</span>) <span class="keyword">as</span> total </span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">    t</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> </span><br><span class="line">    <span class="built_in">date</span>,</span><br><span class="line">    <span class="keyword">category</span>,</span><br><span class="line">    <span class="keyword">value</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> </span><br><span class="line">    <span class="built_in">date</span> <span class="keyword">desc</span></span><br></pre></td></tr></table></figure>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><table>
+<thead>
+<tr>
+<th>date</th>
+<th>category</th>
+<th>total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20181012</td>
+<td>a</td>
+<td>100</td>
+</tr>
+<tr>
+<td>20181013</td>
+<td>a</td>
+<td>300</td>
+</tr>
+</tbody>
+</table>
+<h1 id="取相邻时间的值"><a href="#取相邻时间的值" class="headerlink" title="取相邻时间的值"></a>取相邻时间的值</h1><h2 id="假设有表格t，数据表示学生迟到信息"><a href="#假设有表格t，数据表示学生迟到信息" class="headerlink" title="假设有表格t，数据表示学生迟到信息"></a>假设有表格t，数据表示学生迟到信息</h2><table>
+<thead>
+<tr>
+<th>date</th>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20181012</td>
+<td>张三</td>
+</tr>
+<tr>
+<td>20181013</td>
+<td>张三</td>
+</tr>
+<tr>
+<td>20181012</td>
+<td>王五</td>
+</tr>
+<tr>
+<td>20181012</td>
+<td>李四</td>
+</tr>
+</tbody>
+</table>
+<h2 id="取数代码-1"><a href="#取数代码-1" class="headerlink" title="取数代码"></a>取数代码</h2><p>取相邻的数值的函数除了LAG还有lead，但是我觉得都可以通过order by里面的顺序控制，所以没太大必要记两个东西<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> </span><br><span class="line">    dt,</span><br><span class="line">    <span class="keyword">name</span>,</span><br><span class="line">    LAG(album_category_id,<span class="number">1</span>) <span class="keyword">over</span> (<span class="keyword">partition</span> <span class="keyword">by</span> <span class="keyword">name</span> <span class="keyword">order</span> <span class="keyword">by</span> dt) <span class="keyword">as</span> late_last_time<span class="comment">--取前1日的专辑类别</span></span><br><span class="line"><span class="keyword">from</span> dwd.album_detail_df</span><br></pre></td></tr></table></figure></p>
+<h2 id="结果-1"><a href="#结果-1" class="headerlink" title="结果"></a>结果</h2><table>
+<thead>
+<tr>
+<th>date</th>
+<th>name</th>
+<th>late_last_time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20181013</td>
+<td>张三</td>
+<td>20181012</td>
+</tr>
+</tbody>
+</table>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/25/sql时间处理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IvyJin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据分析笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/25/sql时间处理/" itemprop="url">SQL时间函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-25T20:37:16+08:00">
+                2018-06-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/sql/" itemprop="url" rel="index">
+                    <span itemprop="name">sql</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="日期与unix时间戳转换"><a href="#日期与unix时间戳转换" class="headerlink" title="日期与unix时间戳转换"></a>日期与unix时间戳转换</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">## 1.1 获取当前unix时间戳：</span><br><span class="line">unix_timestamp()</span><br><span class="line"></span><br><span class="line">## 1.2 unix时间戳转日期</span><br><span class="line">from_unixtime(bigint unixtime[, string format]) </span><br><span class="line">示例：from_unixtime(1529931158,'yyyy-MM-dd')    </span><br><span class="line"></span><br><span class="line">## 1.3 日期转unix时间戳</span><br><span class="line">unix_timestamp(string date)</span><br><span class="line">示例：unix_timestamp('2018-06-25 12:00:00')</span><br><span class="line"></span><br><span class="line">## 1.4 指定日期格式转unix时间戳 </span><br><span class="line">unix_timestamp(string date, string pattern)   </span><br><span class="line">示例：unix_timestamp('20180625','yyyyMMdd')</span><br></pre></td></tr></table></figure>
+<h2 id="计算时间差"><a href="#计算时间差" class="headerlink" title="计算时间差"></a>计算时间差</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">## 2.1 计算相差的天数</span><br><span class="line">datediff(string enddate, string startdate)</span><br><span class="line"></span><br><span class="line"># 2.2 计算相差的秒数</span><br><span class="line">unix_timestamp('2017-04-13 23:59:59') - unix_timestamp('2017-04-13 22:59:59')</span><br></pre></td></tr></table></figure>
+<h2 id="常用时间格式的转换"><a href="#常用时间格式的转换" class="headerlink" title="常用时间格式的转换"></a>常用时间格式的转换</h2><h3 id="yyyyMMdd转化为yyyy-mm-dd，假设字段名为date"><a href="#yyyyMMdd转化为yyyy-mm-dd，假设字段名为date" class="headerlink" title="yyyyMMdd转化为yyyy-mm-dd，假设字段名为date"></a>yyyyMMdd转化为yyyy-mm-dd，假设字段名为date</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 方法1</span></span><br><span class="line">concat(substr(date,1,4),"-",substr(date,5,2),"-",substr(date,7,2))</span><br><span class="line"><span class="comment">-- 方法2</span></span><br><span class="line">from_unixtime(unix_timestamp(string(date),'yyyymmdd'),'yyyy-mm-dd')</span><br></pre></td></tr></table></figure>
+<h3 id="yyyy-mm-dd转化为yyyyMMdd，假设字段名为date"><a href="#yyyy-mm-dd转化为yyyyMMdd，假设字段名为date" class="headerlink" title="yyyy-mm-dd转化为yyyyMMdd，假设字段名为date"></a>yyyy-mm-dd转化为yyyyMMdd，假设字段名为date</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 方法1</span></span><br><span class="line">regexp_replace(date,"-","")</span><br><span class="line"><span class="comment">-- 方法2</span></span><br><span class="line">from_unixtime(unix_timestamp(date,'yyyy-mm-dd'),'yyyymmdd')</span><br></pre></td></tr></table></figure>
+<h2 id="日期增加-减少"><a href="#日期增加-减少" class="headerlink" title="日期增加/减少"></a>日期增加/减少</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 日期增加</span></span><br><span class="line">date_add(string startdate, int days)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 日期减少	</span></span><br><span class="line">date_sub (string startdate, int days)</span><br></pre></td></tr></table></figure>
+<h2 id="日期转化为周"><a href="#日期转化为周" class="headerlink" title="日期转化为周"></a>日期转化为周</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DATE_ADD(date ,- (cast (date_format(date,'u') as int)-1)) as active_week</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/25/tableau画桑基图/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IvyJin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据分析笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/25/tableau画桑基图/" itemprop="url">tableau画桑基图</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-25T20:34:22+08:00">
+                2018-06-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tableau/" itemprop="url" rel="index">
+                    <span itemprop="name">tableau</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="效果预览"><a href="#效果预览" class="headerlink" title="效果预览"></a>效果预览</h2><p>横向展示<br><img src="/2018/06/25/tableau画桑基图/result_2.png" alt="横向展示"><br>纵向展示<br><img src="/2018/06/25/tableau画桑基图/result_1.png" alt="纵向展示"></p>
+<h2 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h2><p>文件1：层级关系表t1，明细见附录文件1<br>文件2：包含等级，T1,T2其中T1为-6到6之间，以0.25为间隔的等差数列，level=1时T2=T1，level=2时T2=T1+12，level=3时T2=T1+24等，依次类推。<strong>以下为表样及部分案例，需要补齐</strong></p>
+<table>
+<thead>
+<tr>
+<th>level</th>
+<th>t1</th>
+<th>t2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>-6</td>
+<td>-6</td>
+</tr>
+<tr>
+<td>1</td>
+<td>-5.75</td>
+<td>-5.75</td>
+</tr>
+<tr>
+<td>1</td>
+<td>5.75</td>
+<td>5.75</td>
+</tr>
+<tr>
+<td>1</td>
+<td>6</td>
+<td>6</td>
+</tr>
+<tr>
+<td>2</td>
+<td>-6</td>
+<td>6</td>
+</tr>
+<tr>
+<td>2</td>
+<td>-5.75</td>
+<td>6.25</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5.75</td>
+<td>17.75</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6</td>
+<td>18</td>
+</tr>
+<tr>
+<td>3</td>
+<td>-6</td>
+<td>18</td>
+</tr>
+<tr>
+<td>3</td>
+<td>-5.75</td>
+<td>12.25</td>
+</tr>
+<tr>
+<td>3</td>
+<td>5.75</td>
+<td>29.75</td>
+</tr>
+<tr>
+<td>3</td>
+<td>6</td>
+<td>30</td>
+</tr>
+</tbody>
+</table>
+<h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>计算公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>position1_label</td>
+<td>case level when 3 then level2 when 2 then level1 when 1 then ‘start’ end</td>
+</tr>
+<tr>
+<td>position2_label</td>
+<td>case level when 3 then level3 when 2 then level2 when 1 then level1 end</td>
+</tr>
+<tr>
+<td>category</td>
+<td>position1_label-position2_label</td>
+</tr>
+</tbody>
+</table>
+<h3 id="分阶段计算出level3的position2-position1，以及level2的position1"><a href="#分阶段计算出level3的position2-position1，以及level2的position1" class="headerlink" title="分阶段计算出level3的position2,position1，以及level2的position1"></a>分阶段计算出level3的position2,position1，以及level2的position1</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- step1:计算level3的position2,作为表step1</span></span><br><span class="line"><span class="keyword">select</span> </span><br><span class="line">    <span class="keyword">level</span>,</span><br><span class="line">    level1,</span><br><span class="line">    level2,</span><br><span class="line">    level3,</span><br><span class="line">    row_number() <span class="keyword">over</span>(<span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">concat</span>(level1,<span class="keyword">coalesce</span>(level2,level1),<span class="keyword">coalesce</span>(level3,level2,level1))) <span class="keyword">as</span> position2</span><br><span class="line"><span class="keyword">from</span> t1</span><br><span class="line"></span><br><span class="line"><span class="comment">-- step2:计算level3的position1,作为表step2</span></span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">    level1,</span><br><span class="line">    level2,</span><br><span class="line">    <span class="keyword">floor</span>(<span class="keyword">avg</span>(position2)) <span class="keyword">as</span> position1</span><br><span class="line"><span class="keyword">from</span> step1</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">level</span> = <span class="number">3</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> </span><br><span class="line">    level1,</span><br><span class="line">    level2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- step3:计算level2的position1,作为表step3</span></span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">    level1,</span><br><span class="line">    <span class="keyword">floor</span>(<span class="keyword">avg</span>(position1)) <span class="keyword">as</span> position1</span><br><span class="line"><span class="keyword">from</span> step3</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> </span><br><span class="line">    level1</span><br></pre></td></tr></table></figure>
+<h3 id="计算出各个节点的position1-position2"><a href="#计算出各个节点的position1-position2" class="headerlink" title="计算出各个节点的position1,position2"></a>计算出各个节点的position1,position2</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> </span><br><span class="line">    t1.level,</span><br><span class="line">    t1.level1,</span><br><span class="line">    t1.level2,</span><br><span class="line">    t1.level3,</span><br><span class="line">    t2.position1,</span><br><span class="line">    t1.position2,</span><br><span class="line">    t1.level2 <span class="keyword">as</span> position1_label,</span><br><span class="line">    t1.level3 <span class="keyword">as</span> position2_label</span><br><span class="line"><span class="keyword">from</span> step1 t1 </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> step2 t2 </span><br><span class="line"><span class="keyword">on</span> </span><br><span class="line">    t1.level1 = t2.level1 </span><br><span class="line">    <span class="keyword">and</span> t1.level2 = t2.level2</span><br><span class="line"><span class="keyword">where</span> t1.level=<span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">union</span> all</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> </span><br><span class="line">    <span class="number">2</span> <span class="keyword">as</span> <span class="keyword">level</span>,</span><br><span class="line">    t1.level1,</span><br><span class="line">    t1.level2,</span><br><span class="line">    <span class="string">''</span> level3,</span><br><span class="line">    t2.position1 <span class="keyword">as</span> position1,</span><br><span class="line">    t1.position1 <span class="keyword">as</span> position2,</span><br><span class="line">    t1.level1 <span class="keyword">as</span> position1_label,</span><br><span class="line">    t1.level2 <span class="keyword">as</span> position2_label</span><br><span class="line"><span class="keyword">from</span> step2 t1 </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> step3 t2 </span><br><span class="line"><span class="keyword">on</span> </span><br><span class="line">    t1.level1 = t2.level1</span><br><span class="line"></span><br><span class="line"><span class="keyword">union</span> all </span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">    <span class="number">1</span> <span class="keyword">as</span> <span class="keyword">level</span>,</span><br><span class="line">    t1.level1,</span><br><span class="line">    <span class="string">''</span> <span class="keyword">as</span> level2,</span><br><span class="line">    <span class="string">''</span> <span class="keyword">as</span> level3,</span><br><span class="line">    t2.position1,</span><br><span class="line">    t1.position1 <span class="keyword">as</span> position2,</span><br><span class="line">    <span class="string">'start'</span> <span class="keyword">as</span> position1_label,</span><br><span class="line">    t1.level1 <span class="keyword">as</span> position2_label</span><br><span class="line"><span class="keyword">from</span> step3 t1 </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> </span><br><span class="line">(<span class="keyword">select</span></span><br><span class="line">    <span class="keyword">floor</span>(<span class="keyword">avg</span>(position1)) <span class="keyword">as</span> position1</span><br><span class="line"><span class="keyword">from</span> step3) t2 </span><br><span class="line"><span class="keyword">on</span> </span><br><span class="line">    <span class="number">1</span>=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h3 id="数据预览"><a href="#数据预览" class="headerlink" title="数据预览"></a>数据预览</h3><p>数据结果为level1的position2 = level2对应的position1,level2的position2为level3对应的position1<br><img src="/2018/06/25/tableau画桑基图/sankey.png" alt="本例数据预览"></p>
+<h2 id="tableau中操作"><a href="#tableau中操作" class="headerlink" title="tableau中操作"></a>tableau中操作</h2><h3 id="数据处理-1"><a href="#数据处理-1" class="headerlink" title="数据处理"></a>数据处理</h3><table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>计算公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>sigmoid</strong></td>
+<td>1/(1+EXP(1)^-[t])</td>
+</tr>
+<tr>
+<td><strong>curve</strong></td>
+<td>[position1] + (([position2]-[position1])*[sigmoid])</td>
+</tr>
+<tr>
+<td><strong>points</strong></td>
+<td>if  last()=0 then sum([t1]) end</td>
+</tr>
+</tbody>
+</table>
+<p><strong>color</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if sum([t1])= -6 then 'gray' </span><br><span class="line">elseif sum([t1])= 6 then 'orange'</span><br><span class="line">elseif sum([t1])= 18 then 'blue'</span><br><span class="line">elseif sum([t1])= 30 then 'green' </span><br><span class="line">elseif sum([t1])= 42 then 'pink' </span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="看板操作"><a href="#看板操作" class="headerlink" title="看板操作"></a>看板操作</h3><p>step1:t1、points作为列，curve作为行<br>step2:将t、points、level、level1、level2、level3、position1_label、position2_label放到详细信息中<br>step3:将详细信息中的t调整为维度<br><img src="/2018/06/25/tableau画桑基图/t_dimension.png" alt="step3图示"><br>step4:points编辑表计算,<br><img src="/2018/06/25/tableau画桑基图/point_step1.png" alt="编辑表计算"><br>step5:计算依据为特定维度-t<br><img src="/2018/06/25/tableau画桑基图/points_step2.png" alt="调整计算依据"><br>step6:合并轴-&gt;同步轴，并将color拖到points的颜色中,既可以得到下面的结果了<br><img src="/2018/06/25/tableau画桑基图/result.png" alt="最终结果如图"></p>
+<p><strong>最后调整格式就行啦~</strong></p>
+<h2 id="纵向展示"><a href="#纵向展示" class="headerlink" title="纵向展示"></a>纵向展示</h2><p>step1:切换行列<br>step2:编辑轴：curve-倒序,t1倒序<br>step3：修改颜色调调格式就好啦~</p>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>文件1：</p>
+<table>
+<thead>
+<tr>
+<th>level</th>
+<th>level1</th>
+<th>level2</th>
+<th>level3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>2</td>
+<td>a</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>3</td>
+<td>a</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>3</td>
+<td>b</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>3</td>
+<td>c</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>a</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>b</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+<td>a</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+<td>c</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>3</td>
+<td>b</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>3</td>
+<td>c</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>1</td>
+<td>a</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>1</td>
+<td>b</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>1</td>
+<td>c</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+<td>a</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+<td>b</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+<td>c</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+<td>d</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+<td>e</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>3</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/Tensorflow安装/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IvyJin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据分析笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/09/Tensorflow安装/" itemprop="url">tensorflow安装</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T08:04:12+08:00">
+                2018-06-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h2><p>docker安装地址：<a href="https://www.docker.com/get-docker" target="_blank" rel="noopener">https://www.docker.com/get-docker</a><br>注册的时候可能会需要翻墙</p>
+<h2 id="启动docker"><a href="#启动docker" class="headerlink" title="启动docker"></a>启动docker</h2><p>mac右上角点docker图标启动</p>
+<h2 id="用docker安装tensorflow"><a href="#用docker安装tensorflow" class="headerlink" title="用docker安装tensorflow"></a>用docker安装tensorflow</h2><p>首次运行会安装tensorflow image服务，速度可能会比较慢;最后打开<a href="http://localhost:8888就可以使用jupyter" target="_blank" rel="noopener">http://localhost:8888就可以使用jupyter</a> notebook<br>python2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -p 8888:8888 tensorflow/tensorflow</span><br></pre></td></tr></table></figure></p>
+<p>python3<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -p 8888:8888 tensorflow/tensorflow:latest-py3</span><br></pre></td></tr></table></figure></p>
+<h2 id="停止-启动容器"><a href="#停止-启动容器" class="headerlink" title="停止/启动容器"></a>停止/启动容器</h2><p>停止：control+c 停止容器<br>启动：<br>查看容器ID<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure></p>
+<p>运行容器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start -i (跟上面查到的容器ID)</span><br></pre></td></tr></table></figure></p>
+<h2 id="jupyter读取（挂载）本地文件"><a href="#jupyter读取（挂载）本地文件" class="headerlink" title="jupyter读取（挂载）本地文件"></a>jupyter读取（挂载）本地文件</h2><p>python2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -p 8888:8888 -v 本地文件夹的绝对路径:jupyter路径 tensorflow/tensorflow</span><br></pre></td></tr></table></figure></p>
+<p>python3<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -p 8888:8888 -v ~/tensorflow:/notebooks tensorflow/tensorflow:latest-py3</span><br></pre></td></tr></table></figure></p>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>可能会提示端口被占用，是因为挂载需要在CONTAINER创建时挂载；<br>这时候需要先执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure></p>
+<p>查看所有CONTAINER，然后删除所有CONTAINER<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm (跟上面查到的容器ID）</span><br></pre></td></tr></table></figure></p>
+<h2 id="jupyter执行终端命令"><a href="#jupyter执行终端命令" class="headerlink" title="jupyter执行终端命令"></a>jupyter执行终端命令</h2><p>在命令前加!即可，如!ls</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/04/tableau个性化地图/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IvyJin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="数据分析笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/04/tableau个性化地图/" itemprop="url">tableau个性化地图</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-04T13:07:30+08:00">
+                2018-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tableau/" itemprop="url" rel="index">
+                    <span itemprop="name">tableau</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>个性化地图是指可以用自定义图片为背景，在图片上指定位置处标记数据。比如迪士尼APP里面的地图，就是个性化地图，在互联网公司可以用在标注产品各个位置的访问，可以非常直观的查看不同位置的点击，并据此调整产品、运营策略。</p>
+</blockquote>
+<h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><p>需要准备的数据包括2个：<br>a.点标注的数据值表t1，见附录<br>b.点的坐标位置表t2，见附录</p>
+<h1 id="背景图"><a href="#背景图" class="headerlink" title="背景图"></a>背景图</h1><p>案例背景图在附录中可查看</p>
+<h1 id="看板操作"><a href="#看板操作" class="headerlink" title="看板操作"></a>看板操作</h1><p>step1:连接数据源，以t1为主表，左连接t2<br>step2:把y拉行，x拉到列，度量值调为 「平均 」<br>step3:插入背景图片<br><img src="/2018/06/04/tableau个性化地图/pages.jpeg" alt="插入背景图片"><br>step4:插入形状，调整形状大小以及标签的对齐方式<br><img src="/2018/06/04/tableau个性化地图/shape.jpeg" alt="形状"></p>
+<p>PS.tableau里面是可以自定义形状的，可以把自定义形状放在tableau默认形状的路径下，在选择形状的时候点击 「重载形状」，就可以用刚刚放进去的形状了</p>
+<h1 id="最终效果图"><a href="#最终效果图" class="headerlink" title="最终效果图"></a>最终效果图</h1><p>按照上述操作后就可以获取得到个性化地图啦~<br><img src="/2018/06/04/tableau个性化地图/result.png" alt="最终效果图"></p>
+<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><h2 id="表t1"><a href="#表t1" class="headerlink" title="表t1"></a>表t1</h2><table>
+<thead>
+<tr>
+<th>button</th>
+<th>number</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>推荐</td>
+<td>77</td>
+</tr>
+<tr>
+<td>VIP</td>
+<td>22</td>
+</tr>
+<tr>
+<td>小说</td>
+<td>66</td>
+</tr>
+<tr>
+<td>直播</td>
+<td>99</td>
+</tr>
+<tr>
+<td>儿童</td>
+<td>11</td>
+</tr>
+<tr>
+<td>广播</td>
+<td>22</td>
+</tr>
+<tr>
+<td>焦点图</td>
+<td>99</td>
+</tr>
+<tr>
+<td>经典必听</td>
+<td>77</td>
+</tr>
+<tr>
+<td>每日必听</td>
+<td>33</td>
+</tr>
+<tr>
+<td>一键听</td>
+<td>22</td>
+</tr>
+<tr>
+<td>付费精品</td>
+<td>11</td>
+</tr>
+<tr>
+<td>听台州</td>
+<td>11</td>
+</tr>
+<tr>
+<td>猜你喜欢_更多</td>
+<td>55</td>
+</tr>
+<tr>
+<td>猜你喜欢_1</td>
+<td>88</td>
+</tr>
+<tr>
+<td>猜你喜欢_2</td>
+<td>77</td>
+</tr>
+<tr>
+<td>猜你喜欢_3</td>
+<td>66</td>
+</tr>
+<tr>
+<td>猜你喜欢_4</td>
+<td>55</td>
+</tr>
+<tr>
+<td>猜你喜欢_5</td>
+<td>44</td>
+</tr>
+<tr>
+<td>猜你喜欢_6</td>
+<td>33</td>
+</tr>
+<tr>
+<td>猜你喜欢_换一批</td>
+<td>44</td>
+</tr>
+<tr>
+<td>首页</td>
+<td>44</td>
+</tr>
+<tr>
+<td>我听</td>
+<td>88</td>
+</tr>
+<tr>
+<td>发现</td>
+<td>22</td>
+</tr>
+<tr>
+<td>我的</td>
+<td>33</td>
+</tr>
+</tbody>
+</table>
+<h2 id="表t2"><a href="#表t2" class="headerlink" title="表t2"></a>表t2</h2><table>
+<thead>
+<tr>
+<th>button</th>
+<th>x</th>
+<th>y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>推荐</td>
+<td>0.34</td>
+<td>7.3</td>
+</tr>
+<tr>
+<td>VIP</td>
+<td>0.9595</td>
+<td>7.3</td>
+</tr>
+<tr>
+<td>小说</td>
+<td>1.579</td>
+<td>7.3</td>
+</tr>
+<tr>
+<td>直播</td>
+<td>2.129</td>
+<td>7.3</td>
+</tr>
+<tr>
+<td>儿童</td>
+<td>2.692</td>
+<td>7.3</td>
+</tr>
+<tr>
+<td>广播</td>
+<td>3.3</td>
+<td>7.3</td>
+</tr>
+<tr>
+<td>焦点图</td>
+<td>0.894</td>
+<td>6.18</td>
+</tr>
+<tr>
+<td>经典必听</td>
+<td>0.379</td>
+<td>5.068</td>
+</tr>
+<tr>
+<td>每日必听</td>
+<td>1.196</td>
+<td>5.068</td>
+</tr>
+<tr>
+<td>一键听</td>
+<td>1.993</td>
+<td>5.068</td>
+</tr>
+<tr>
+<td>付费精品</td>
+<td>2.799</td>
+<td>5.068</td>
+</tr>
+<tr>
+<td>听台州</td>
+<td>3.596</td>
+<td>5.068</td>
+</tr>
+<tr>
+<td>猜你喜欢_更多</td>
+<td>3.559</td>
+<td>4.6</td>
+</tr>
+<tr>
+<td>猜你喜欢_1</td>
+<td>0.555</td>
+<td>3.765</td>
+</tr>
+<tr>
+<td>猜你喜欢_2</td>
+<td>1.851</td>
+<td>3.765</td>
+</tr>
+<tr>
+<td>猜你喜欢_3</td>
+<td>3.103</td>
+<td>3.765</td>
+</tr>
+<tr>
+<td>猜你喜欢_4</td>
+<td>0.555</td>
+<td>2.251</td>
+</tr>
+<tr>
+<td>猜你喜欢_5</td>
+<td>1.851</td>
+<td>2.251</td>
+</tr>
+<tr>
+<td>猜你喜欢_6</td>
+<td>3.103</td>
+<td>2.251</td>
+</tr>
+<tr>
+<td>猜你喜欢_换一批</td>
+<td>2.033</td>
+<td>1.228</td>
+</tr>
+<tr>
+<td>首页</td>
+<td>0.384</td>
+<td>0.495</td>
+</tr>
+<tr>
+<td>我听</td>
+<td>1.196</td>
+<td>0.495</td>
+</tr>
+<tr>
+<td>发现</td>
+<td>2.804</td>
+<td>0.495</td>
+</tr>
+<tr>
+<td>我的</td>
+<td>3.601</td>
+<td>0.495</td>
+</tr>
+</tbody>
+</table>
+<h2 id="背景图-1"><a href="#背景图-1" class="headerlink" title="背景图"></a>背景图</h2><p><img src="/2018/06/04/tableau个性化地图/backgroud.png" alt="图示"></p>
+<h2 id="获取坐标的方法"><a href="#获取坐标的方法" class="headerlink" title="获取坐标的方法"></a>获取坐标的方法</h2><p>导入背景图后，点击右键 -&gt; 添加注释 -&gt; 点，可通过移动点的位置获取各个待标注点的坐标<br><img src="/2018/06/04/tableau个性化地图/zuobiao.png" alt="坐标获取"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="IvyJin" />
+            
+              <p class="site-author-name" itemprop="name">IvyJin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">IvyJin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>
